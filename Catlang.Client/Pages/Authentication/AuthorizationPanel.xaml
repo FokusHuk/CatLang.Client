@@ -1,0 +1,35 @@
+﻿<Page x:Class="Catlang.Client.Pages.Authentication.AuthorizationPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Catlang.Client.Pages.Authentication"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="400"
+      Title="AuthorizationPanel">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label FontSize="18" Grid.Row="1" Grid.Column="2">Логин</Label>
+        <TextBox x:Name="Login" FontSize="20" VerticalAlignment="Top" Height="35" Grid.Row="2" Grid.Column="2"></TextBox>
+        <Label FontSize="18" Grid.Row="3" Grid.Column="2">Пароль</Label>
+        <PasswordBox x:Name="Password" FontSize="20" VerticalAlignment="Top" Height="35" Grid.Row="4" Grid.Column="2"></PasswordBox>
+        <Button x:Name="Authorize" Click="Authorize_Click" FontSize="20" Background="LightCyan" Height="45" Width="250" VerticalAlignment="Top" Grid.Row="5" Grid.Column="2">Войти</Button>
+
+    </Grid>
+</Page>

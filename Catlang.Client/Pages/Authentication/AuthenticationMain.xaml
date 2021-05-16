@@ -1,0 +1,34 @@
+﻿<Page x:Class="Catlang.Client.Pages.AuthenticationMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Catlang.Client.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="Authentication"
+      Background="MintCream">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="120"></RowDefinition>
+            <RowDefinition Height="350"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TabControl x:Name="authPanelName" SelectionChanged="authPanelName_SelectionChanged" Width="364" Height="53" Grid.Row="2" Grid.Column="2">
+            <TabItem Header="Авторизация" Background="Beige" HorizontalAlignment="Left" FontSize="20" Height="50" Width="180"></TabItem>
+            <TabItem Header="Регистрация" Background="Beige" HorizontalAlignment="Right" FontSize="20" Height="50" Width="180"></TabItem>
+        </TabControl>
+
+        <Frame x:Name="authPanel" Grid.Row="3" Grid.Column="2" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>
