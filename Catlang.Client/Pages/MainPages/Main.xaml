@@ -19,5 +19,6 @@
         </Grid.RowDefinitions>
         
         <Frame x:Name="appBar" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="body" Grid.Column="1" Grid.Row="2" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>
