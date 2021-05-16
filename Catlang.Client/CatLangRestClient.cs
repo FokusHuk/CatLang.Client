@@ -5,6 +5,8 @@ namespace Catlang.Client
 {
     public static class CatLangRestClient
     {
+        public static string Username;
+
         private static RestClient client;
         private static string token;
 
@@ -30,6 +32,7 @@ namespace Catlang.Client
             {
                 var content = JsonConvert.DeserializeObject<AuthenticationResponse>(response.Content);
                 token = content.AccessToken;
+                Username = content.Username;
                 return true;
             }
             else
@@ -55,10 +58,12 @@ namespace Catlang.Client
 
         private class AuthenticationResponse
         {
+            public string Username { get; set; }
             public string AccessToken { get; set; }
 
-            public AuthenticationResponse(string accessToken)
+            public AuthenticationResponse(string username, string accessToken)
             {
+                Username = username;
                 AccessToken = accessToken;
             }
         }

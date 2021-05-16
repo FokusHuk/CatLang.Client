@@ -16,6 +16,8 @@ namespace Catlang.Client.Pages.Authentication
             InitializeComponent();
 
             SetMainPage = setMainPage;
+            Login.Text = "admin";
+            Password.Password = "159321";
         }
 
         private void Authorize_Click(object sender, RoutedEventArgs e)

@@ -20,11 +20,11 @@ namespace Catlang.Client
             CatLangRestClient.Initialize(serverUrl);
 
             authentication = new AuthenticationMain(() => Authenticate());
-            mainPage = new Main();
         }
 
         public void Authenticate()
         {
+            mainPage = new Main();
             state.Content = mainPage;
         }
 

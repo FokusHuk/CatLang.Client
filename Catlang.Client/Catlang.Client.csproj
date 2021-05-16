@@ -87,7 +87,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Main.xaml">
+    <Page Include="Pages\MainPages\ApplicationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPages\Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,7 +106,10 @@
     <Compile Include="Pages\Authentication\RegistrationPanel.xaml.cs">
       <DependentUpon>RegistrationPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Main.xaml.cs">
+    <Compile Include="Pages\MainPages\ApplicationBar.xaml.cs">
+      <DependentUpon>ApplicationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPages\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
