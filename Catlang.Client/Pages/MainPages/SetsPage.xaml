@@ -52,7 +52,7 @@
                             </Grid>
 
                             <TextBlock Margin="0, 2, 0, 0" HorizontalAlignment="Left" Height="15" Width="565" FontSize="10" FontStyle="Italic">Список слов</TextBlock>
-                            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" Margin="0, 2, 0, 0" HorizontalAlignment="Left" Height="30" Width="565" FontSize="15" BorderThickness="1" Text="{Binding Words}" x:Name="Words"/>
+                            <TextBox IsReadOnly="True" VerticalContentAlignment="Center" Margin="0, 2, 0, 0" HorizontalAlignment="Left" Height="30" Width="565" FontSize="15" BorderThickness="1" Text="{Binding WordsLine}" x:Name="Words"/>
                         </StackPanel>
                         <Grid>
                             <Grid.ColumnDefinitions>

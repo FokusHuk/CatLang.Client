@@ -1,5 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using Catlang.Client.Contracts;
+using Catlang.Client.Models;
+using Newtonsoft.Json;
 using RestSharp;
+using System.Collections.Generic;
 
 namespace Catlang.Client
 {
@@ -56,16 +59,16 @@ namespace Catlang.Client
             return response.StatusCode == System.Net.HttpStatusCode.OK;
         }
 
-        private class AuthenticationResponse
+        public static List<Set> GetAllSets()
         {
-            public string Username { get; set; }
-            public string AccessToken { get; set; }
+            var resource = $"sets";
+            var request = new RestRequest(resource, Method.GET);
+            var response = client.Execute(request);
+            request.AddHeader("Authorization", "Bearer " + token);
 
-            public AuthenticationResponse(string username, string accessToken)
-            {
-                Username = username;
-                AccessToken = accessToken;
-            }
+            var content = JsonConvert.DeserializeObject<GetAllSetsResponse>(response.Content);
+
+            return content.Sets;
         }
     }
 }

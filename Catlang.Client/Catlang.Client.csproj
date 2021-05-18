@@ -71,6 +71,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CatLangRestClient.cs" />
+    <Compile Include="Contracts\AuthenticationResponse.cs" />
+    <Compile Include="Contracts\GetAllSetsResponse.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -109,6 +111,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Set.cs" />
+    <Compile Include="Models\SetModel.cs" />
+    <Compile Include="Models\Word.cs" />
     <Compile Include="Pages\Authentication\AuthenticationMain.xaml.cs">
       <DependentUpon>AuthenticationMain.xaml</DependentUpon>
     </Compile>
@@ -159,5 +164,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
