@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="80" d:DesignWidth="1200"
       Title="ApplicationBar"
-      Background="PaleGoldenrod">
+      Background="Azure">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,11 +24,11 @@
 
         <Label Grid.Column="1" Foreground="DarkSlateGray" FontSize="35" FontWeight="DemiBold" FontStyle="Italic" Height="60" Width="160">CatLang</Label>
 
-        <Button x:Name="Sets" Click="Sets_Click" Grid.Column="3" Foreground="DarkSlateGray" BorderThickness="0" Background="PaleGoldenrod" FontWeight="Bold" FontStyle="Italic" FontSize="27" VerticalAlignment="Center" Height="50" Width="130">Наборы</Button>
-        <Button x:Name="Recommendation" Click="Recommendation_Click" Grid.Column="4" Foreground="DarkSlateGray" BorderThickness="0" Background="PaleGoldenrod" FontWeight="Bold" FontStyle="Italic" FontSize="27" VerticalAlignment="Center" Height="50" Width="200">Рекомендации</Button>
-        <Button x:Name="Profile" Click="Profile_Click" Grid.Column="5" Foreground="DarkSlateGray" BorderThickness="0" Background="PaleGoldenrod" FontWeight="Bold" FontStyle="Italic" FontSize="27" VerticalAlignment="Center" Height="50" Width="140">Профиль</Button>
+        <Button x:Name="Sets" Click="Sets_Click" Grid.Column="3" Foreground="DarkSlateGray" BorderThickness="0" Background="Azure" FontWeight="Bold" FontStyle="Italic" FontSize="27" VerticalAlignment="Center" Height="50" Width="130">Наборы</Button>
+        <Button x:Name="Recommendation" Click="Recommendation_Click" Grid.Column="4" Foreground="DarkSlateGray" BorderThickness="0" Background="Azure" FontWeight="Bold" FontStyle="Italic" FontSize="27" VerticalAlignment="Center" Height="50" Width="200">Рекомендации</Button>
+        <Button x:Name="Profile" Click="Profile_Click" Grid.Column="5" Foreground="DarkSlateGray" BorderThickness="0" Background="Azure" FontWeight="Bold" FontStyle="Italic" FontSize="27" VerticalAlignment="Center" Height="50" Width="140">Профиль</Button>
 
         <TextBlock x:Name="Username" Grid.Column="7" Foreground="DarkSlateGray" FontWeight="Bold" FontSize="21" TextAlignment="Center" VerticalAlignment="Top" Height="35" Margin="0, 5, 0, 0">Username</TextBlock>
-        <Button x:Name="LogOut" Grid.Column="7" Foreground="RosyBrown" BorderThickness="0" Background="PaleGoldenrod" FontWeight="Medium" FontStyle="Italic" FontSize="20" VerticalAlignment="Bottom" Height="30" Margin="0, 0, 0, 10">Выйти</Button>
+        <Button x:Name="LogOut" Grid.Column="7" Foreground="RosyBrown" BorderThickness="0" Background="Azure" FontWeight="Medium" FontStyle="Italic" FontSize="20" VerticalAlignment="Bottom" Height="30" Margin="0, 0, 0, 10">Выйти</Button>
     </Grid>
 </Page>
