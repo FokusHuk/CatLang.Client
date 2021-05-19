@@ -21,6 +21,8 @@ namespace Catlang.Client.Pages.MainPages
 
             view = new SetsPageView(setModels);
             DataContext = view;
+
+            LearnSet.IsEnabled = false;
         }
 
         private void SetsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -29,6 +31,7 @@ namespace Catlang.Client.Pages.MainPages
             {
                 SetName.Text = "";
                 SetWords.Text = "";
+                LearnSet.IsEnabled = false;
                 return;
             }
 
@@ -40,6 +43,8 @@ namespace Catlang.Client.Pages.MainPages
 
             SetName.Text = view.SelectedItem.StudyTopic;
             SetWords.Text = setWords;
+
+            LearnSet.IsEnabled = true;
         }
 
         private void SortType_SelectionChanged(object sender, SelectionChangedEventArgs e)

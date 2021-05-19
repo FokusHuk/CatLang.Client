@@ -127,11 +127,11 @@
                     <TextBlock Margin="3, 0, 0, 0" FontSize="18" FontStyle="Italic" Grid.Row="3">Список слов:</TextBlock>
                     <TextBox x:Name="SetWords" Background="#FFFAF8" BorderThickness="1" IsReadOnly="True" FontWeight="Medium" FontSize="18" Height="215" Grid.Row="4"></TextBox>
 
-                    <Button Background="#F8FBFA" Width="330" Height="60" FontSize="22" Grid.Row="5">Учить</Button>
+                    <Button x:Name="LearnSet" Background="#F8FBFA" Width="330" Height="60" FontSize="22" Grid.Row="5">Учить</Button>
                 </Grid>
             </Border>
 
-            <Button Background="#F8FBFA" Grid.Row="2" FontSize="22" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="70">Создать свой набор</Button>
+            <Button x:Name="CreateSet" Background="#F8FBFA" Grid.Row="2" FontSize="22" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="70">Создать свой набор</Button>
         </Grid>
     </Grid>
 </Page>
