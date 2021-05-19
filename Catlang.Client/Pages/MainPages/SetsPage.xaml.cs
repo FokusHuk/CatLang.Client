@@ -1,5 +1,6 @@
 ﻿using Catlang.Client.Models;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Windows.Controls;
 
@@ -78,15 +79,26 @@ namespace Catlang.Client.Pages.MainPages
                 DataContext = view;
             }
         }
+
+        private void UpdateSets_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var sets = CatLangRestClient.GetAllSets();
+            var setModels = new ObservableCollection<SetModel>(sets.Select(s => new SetModel(s)).ToList());
+
+            view = new SetsPageView(setModels);
+            DataContext = view;
+        }
     }
 
     public class SetsPageView
     {
+        public string UpdIconPath { get; set; }
         public SetModel SelectedItem { get; set; }
         public ObservableCollection<SetModel> Sets { get; set; }
 
         public SetsPageView(ObservableCollection<SetModel> sets)
         {
+            UpdIconPath = Path.GetFullPath("Resources/update_icon.png");
             Sets = sets;
         }
 
@@ -94,6 +106,7 @@ namespace Catlang.Client.Pages.MainPages
         {
             SelectedItem = null;
             Sets = view.Sets;
+            UpdIconPath = view.UpdIconPath;
         }
     }
 }
