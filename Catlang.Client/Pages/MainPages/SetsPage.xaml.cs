@@ -96,6 +96,7 @@ namespace Catlang.Client.Pages.MainPages
         private void LearnSet_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             StaticExerciseStorage.SetId = view.SelectedItem.Id;
+            StaticExerciseStorage.SetName = view.SelectedItem.StudyTopic;
             OpenExerciseCreationPage();
         }
     }
