@@ -12,6 +12,9 @@ namespace Catlang.Client.Pages
         SetsPage setsPage;
         RecommendationPage recommendationPage;
         ProfilePage profilePage;
+        ExerciseCreationPage exerciseCreationPage;
+        ConformityExercisePage conformityExercisePage;
+        ChoiceExercisePage choiceExercisePage;
 
         public Main()
         {
@@ -21,6 +24,9 @@ namespace Catlang.Client.Pages
             setsPage = new SetsPage(() => OpenExerciseCreationPage());
             recommendationPage = new RecommendationPage();
             profilePage = new ProfilePage();
+            exerciseCreationPage = new ExerciseCreationPage(() => OpenConformityExercisePage(), () => OpenChoiceExercisePage());
+            conformityExercisePage = new ConformityExercisePage();
+            choiceExercisePage = new ChoiceExercisePage();
 
             appBar.Content = applicationBar;
             body.Content = setsPage;
@@ -43,7 +49,17 @@ namespace Catlang.Client.Pages
 
         private void OpenExerciseCreationPage()
         {
-            body.Content = new ExerciseCreationPage();
+            body.Content = exerciseCreationPage;
+        }
+
+        private void OpenConformityExercisePage()
+        {
+            body.Content = conformityExercisePage;
+        }
+
+        private void OpenChoiceExercisePage()
+        {
+            body.Content = choiceExercisePage;
         }
     }
 }

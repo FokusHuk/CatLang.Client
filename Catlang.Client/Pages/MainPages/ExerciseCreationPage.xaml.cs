@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Catlang.Client.Models;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Catlang.Client.Pages.MainPages
 {
@@ -20,19 +10,33 @@ namespace Catlang.Client.Pages.MainPages
     /// </summary>
     public partial class ExerciseCreationPage : Page
     {
-        public ExerciseCreationPage()
+        Action OpenConformityExercisePage;
+        Action OpenChoiceExercisePage;
+
+        public ExerciseCreationPage(Action openConformityExercisePage, Action openChoiceExercisePage)
         {
             InitializeComponent();
+
+            OpenConformityExercisePage = openConformityExercisePage;
+            OpenChoiceExercisePage = openChoiceExercisePage;
         }
 
         private void Conformity_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenConformityExercisePage();
         }
 
         private void Choice_Click(object sender, RoutedEventArgs e)
         {
+            OpenChoiceExercisePage();
+        }
 
+        private void SetExerciseFormat()
+        {
+            if (ExerciseType.SelectedIndex == 0)
+                StaticExerciseStorage.ExerciseFormat = ExerciseFormat.EnRu;
+            else
+                StaticExerciseStorage.ExerciseFormat = ExerciseFormat.RuEn;
         }
     }
 }

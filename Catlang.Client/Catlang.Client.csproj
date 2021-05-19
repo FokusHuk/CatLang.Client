@@ -64,6 +64,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\ExerciseFormat.cs" />
+    <Compile Include="Pages\MainPages\ChoiceExercisePage.xaml.cs">
+      <DependentUpon>ChoiceExercisePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPages\ConformityExercisePage.xaml.cs">
+      <DependentUpon>ConformityExercisePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StaticExerciseStorage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +99,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPages\ApplicationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPages\ChoiceExercisePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPages\ConformityExercisePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
