@@ -70,14 +70,14 @@
                                         <RowDefinition Height="40"></RowDefinition>
                                     </Grid.RowDefinitions>
 
-                                    <TextBox IsReadOnly="True" FontSize="18" FontWeight="Medium" BorderThickness="1" Height="30" Width="240" HorizontalAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Text="{Binding StudyTopic}" x:Name="StudyTopic"/>
+                                    <TextBox IsHitTestVisible="False" IsReadOnly="True" FontSize="18" FontWeight="Medium" BorderThickness="1" Height="30" Width="240" HorizontalAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Text="{Binding StudyTopic}" x:Name="StudyTopic"/>
 
                                     <TextBlock Margin="0, 4, 0, 0" FontSize="10" FontStyle="Italic" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Height="20" Width="90">Автор</TextBlock>
                                     <TextBlock Margin="0, 0, 0, 4" FontSize="14" FontWeight="Medium" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1" Height="20" Width="90" Text="{Binding AuthorName}" x:Name="AuthorName"/>
                                 </Grid>
 
                                 <TextBlock Margin="0, 2, 0, 0" HorizontalAlignment="Left" Height="15" Width="565" FontSize="10" FontStyle="Italic">Список слов</TextBlock>
-                                <TextBox IsReadOnly="True" VerticalContentAlignment="Center" Margin="0, 2, 0, 0" HorizontalAlignment="Left" Height="30" Width="565" FontSize="15" BorderThickness="1" Text="{Binding WordsLine}" x:Name="Words"/>
+                                <TextBox IsHitTestVisible="False" IsReadOnly="True" VerticalContentAlignment="Center" Margin="0, 2, 0, 0" HorizontalAlignment="Left" Height="30" Width="565" FontSize="15" BorderThickness="1" Text="{Binding WordsLine}" x:Name="Words"/>
                             </StackPanel>
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -94,15 +94,15 @@
                                     <RowDefinition Height="25"></RowDefinition>
                                 </Grid.RowDefinitions>
 
-                                <TextBox FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="1" Grid.Column="1">Сложность</TextBox>
-                                <TextBox FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="2" Grid.Column="1">Эффективность</TextBox>
-                                <TextBox FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="3" Grid.Column="1">Популярность</TextBox>
-                                <TextBox FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="4" Grid.Column="1">Время изучения</TextBox>
+                                <TextBox IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="1" Grid.Column="1">Сложность</TextBox>
+                                <TextBox IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="2" Grid.Column="1">Эффективность</TextBox>
+                                <TextBox IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="3" Grid.Column="1">Популярность</TextBox>
+                                <TextBox IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="4" Grid.Column="1">Время изучения</TextBox>
 
-                                <TextBox VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="1" Grid.Column="2" Text="{Binding Complexity}" x:Name="Complexity"/>
-                                <TextBox VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="2" Grid.Column="2" Text="{Binding Efficiency}" x:Name="Efficiency"/>
-                                <TextBox VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="3" Grid.Column="2" Text="{Binding Popularity}" x:Name="Popularity"/>
-                                <TextBox VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="4" Grid.Column="2" Text="{Binding AverageStudyTime}" x:Name="StudyTime"/>
+                                <TextBox IsHitTestVisible="False" VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="1" Grid.Column="2" Text="{Binding Complexity}" x:Name="Complexity"/>
+                                <TextBox IsHitTestVisible="False" VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="2" Grid.Column="2" Text="{Binding Efficiency}" x:Name="Efficiency"/>
+                                <TextBox IsHitTestVisible="False" VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="3" Grid.Column="2" Text="{Binding Popularity}" x:Name="Popularity"/>
+                                <TextBox IsHitTestVisible="False" VerticalAlignment="Center" Height="20" HorizontalContentAlignment="Right" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Row="4" Grid.Column="2" Text="{Binding AverageStudyTime}" x:Name="StudyTime"/>
                             </Grid>
                         </StackPanel>
                     </DataTemplate>
@@ -128,13 +128,13 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <TextBox Background="#F8FBFA" Height="39" Width="351" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" FontSize="20" FontWeight="Medium" Grid.Row="1">Выбранный набор</TextBox>
-                    <TextBox x:Name="SetName" Background="#FFFAF8" Height="48" Width="350" BorderThickness="0" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontSize="18" FontWeight="Medium" Grid.Row="2"></TextBox>
+                    <TextBox IsHitTestVisible="False" Background="#F8FBFA" Height="39" Width="351" BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" FontSize="20" FontWeight="Medium" Grid.Row="1">Выбранный набор</TextBox>
+                    <TextBox IsHitTestVisible="False" x:Name="SetName" Background="#FFFAF8" Height="48" Width="350" BorderThickness="0" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontSize="18" FontWeight="Medium" Grid.Row="2"></TextBox>
 
                     <TextBlock Margin="3, 0, 0, 0" FontSize="18" FontStyle="Italic" Grid.Row="3">Список слов:</TextBlock>
-                    <TextBox x:Name="SetWords" Background="#FFFAF8" BorderThickness="1" IsReadOnly="True" FontWeight="Medium" FontSize="18" Height="215" Grid.Row="4"></TextBox>
+                    <TextBox IsHitTestVisible="False" x:Name="SetWords" Background="#FFFAF8" BorderThickness="1" IsReadOnly="True" FontWeight="Medium" FontSize="18" Height="215" Grid.Row="4"></TextBox>
 
-                    <Button x:Name="LearnSet" Background="#F8FBFA" Width="330" Height="60" FontSize="22" Grid.Row="5">Учить</Button>
+                    <Button x:Name="LearnSet" Click="LearnSet_Click" Background="#F8FBFA" Width="330" Height="60" FontSize="22" Grid.Row="5">Учить</Button>
                 </Grid>
             </Border>
 

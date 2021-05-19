@@ -63,6 +63,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ExerciseFormat.cs" />
+    <Compile Include="StaticExerciseStorage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPages\ApplicationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPages\ExerciseCreationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Pages\MainPages\ApplicationBar.xaml.cs">
       <DependentUpon>ApplicationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPages\ExerciseCreationPage.xaml.cs">
+      <DependentUpon>ExerciseCreationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPages\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>

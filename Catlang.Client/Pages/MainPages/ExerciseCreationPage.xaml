@@ -1,0 +1,101 @@
+﻿<Page x:Class="Catlang.Client.Pages.MainPages.ExerciseCreationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Catlang.Client.Pages.MainPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="591" d:DesignWidth="1194"
+      Title="ExerciseCreationPage"
+      Background="#FAF8FB">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"></ColumnDefinition>
+            <ColumnDefinition Width="297"></ColumnDefinition>
+            <ColumnDefinition Width="600"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Medium" Grid.Row="2" Grid.Column="2">Формат упражнения</TextBlock>
+
+        <TabControl x:Name="ExerciseType" VerticalAlignment="Center" Height="53" Width="600" FontSize="18" Grid.Column="2" Grid.Row="3">
+            <TabItem Background="#FFFAF8" Height="50" Width="298" Header="Английский-Русский" VerticalContentAlignment="Center"></TabItem>
+            <TabItem Background="#FFFAF8" Height="50" Width="298" Header="Русский-Английский" VerticalContentAlignment="Center"></TabItem>
+        </TabControl>
+
+        <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Medium" Grid.Row="4" Grid.Column="2">Тип упражнения</TextBlock>
+
+        <Grid Grid.Row="5" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Conformity" Click="Conformity_Click" Background="#F8FBFA" Height="290" Width="290" Grid.Column="1">
+                <Grid Height="290" Width="290">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock IsHitTestVisible="False" HorizontalAlignment="Center" FontSize="20" Grid.Row="2">Оценка пар</TextBlock>
+
+                    <TextBox IsHitTestVisible="False" Margin="25, 0, 0, 0" HorizontalAlignment="Left" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="4">Original</TextBox>
+                    <TextBox IsHitTestVisible="False" Margin="0, 0, 25, 0" HorizontalAlignment="Right" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="4">Перевод</TextBox>
+
+                    <TextBox IsHitTestVisible="False" Background="#FFFAF8" Margin="40, 0, 0, 0" HorizontalAlignment="Left" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="5">Верно</TextBox>
+                    <TextBox IsHitTestVisible="False" Background="#FFFAF8" Margin="0, 0,40, 0" HorizontalAlignment="Right" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="5">Неверно</TextBox>
+
+                    <TextBox IsHitTestVisible="False" IsReadOnly="True" TextWrapping="WrapWithOverflow" FontSize="18" FontWeight="Medium" Height="100" Width="270" Grid.Row="7">
+                        Для каждой пары "слово" - "перевод" выбрать, является ли данный перевод верным
+                    </TextBox>
+                </Grid>
+            </Button>
+
+            <Button x:Name="Choice" Click="Choice_Click" Background="#F8FBFA" Height="290" Width="290" Grid.Column="2">
+                <Grid Height="290" Width="290">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0"></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock IsHitTestVisible="False" HorizontalAlignment="Center" FontSize="20" Grid.Row="2">Выбор перевода</TextBlock>
+
+                    <TextBox IsHitTestVisible="False" HorizontalAlignment="Center" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="3">Original</TextBox>
+
+                    <TextBox IsHitTestVisible="False" Background="#FFFAF8" Margin="25, 0, 0, 0" HorizontalAlignment="Left" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="4">Перевод</TextBox>
+                    <TextBox IsHitTestVisible="False" Background="#FFFAF8" Margin="0, 0, 25, 0" HorizontalAlignment="Right" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="4">Перевод</TextBox>
+                    <TextBox IsHitTestVisible="False" Background="#FFFAF8" Margin="25, 0, 0, 0" HorizontalAlignment="Left" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="5">Перевод</TextBox>
+                    <TextBox IsHitTestVisible="False" Background="#FFFAF8" Margin="0, 0, 25, 0" HorizontalAlignment="Right" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Width="100" FontSize="16" Grid.Row="5">Перевод</TextBox>
+
+
+                    <TextBox IsHitTestVisible="False" IsReadOnly="True" TextWrapping="WrapWithOverflow" FontSize="18" FontWeight="Medium" Height="100" Width="270" Grid.Row="6">
+                        Для каждого слова выбрать верный вариант перевода из четырех предложенных
+                    </TextBox>
+                </Grid>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

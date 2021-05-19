@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace Catlang.Client.Models
 {
@@ -41,11 +39,7 @@ namespace Catlang.Client.Models
         }
 
         public Guid Id { get; set; }
-        public string AuthorName 
-        { 
-            get => authorName;
-            set { authorName = value; }
-        }
+        public string AuthorName { get; set; }
         public string StudyTopic { get; set; }
         public string WordsLine { get; set; }
         public List<Word> Words { get; set; }

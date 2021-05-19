@@ -1,4 +1,5 @@
 ﻿using Catlang.Client.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
@@ -11,11 +12,14 @@ namespace Catlang.Client.Pages.MainPages
     /// </summary>
     public partial class SetsPage : Page
     {
+        Action OpenExerciseCreationPage;
         private SetsPageView view;
 
-        public SetsPage()
+        public SetsPage(Action openExerciseCreationPage)
         {
             InitializeComponent();
+
+            OpenExerciseCreationPage = openExerciseCreationPage;
 
             var sets = CatLangRestClient.GetAllSets();
             var setModels = new ObservableCollection<SetModel>(sets.Select(s => new SetModel(s)).ToList());
@@ -87,6 +91,12 @@ namespace Catlang.Client.Pages.MainPages
 
             view = new SetsPageView(setModels);
             DataContext = view;
+        }
+
+        private void LearnSet_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            StaticExerciseStorage.SetId = view.SelectedItem.Id;
+            OpenExerciseCreationPage();
         }
     }
 

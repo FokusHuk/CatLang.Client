@@ -18,7 +18,7 @@ namespace Catlang.Client.Pages
             InitializeComponent();
 
             applicationBar = new ApplicationBar(() => OpenSetsPage(), () => OpenRecommendationPage(), () => OpenProfilePage());
-            setsPage = new SetsPage();
+            setsPage = new SetsPage(() => OpenExerciseCreationPage());
             recommendationPage = new RecommendationPage();
             profilePage = new ProfilePage();
 
@@ -39,6 +39,11 @@ namespace Catlang.Client.Pages
         private void OpenProfilePage()
         {
             body.Content = profilePage;
+        }
+
+        private void OpenExerciseCreationPage()
+        {
+            body.Content = new ExerciseCreationPage();
         }
     }
 }
