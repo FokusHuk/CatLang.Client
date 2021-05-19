@@ -6,9 +6,37 @@
       xmlns:local="clr-namespace:Catlang.Client.Pages.MainPages"
       mc:Ignorable="d" 
       d:DesignHeight="591" d:DesignWidth="1194"
-      Title="ConformityExercisePage">
+      Title="ConformityExercisePage"
+      Background="#FAF8FB">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"></ColumnDefinition>
+            <ColumnDefinition Width="272"></ColumnDefinition>
+            <ColumnDefinition Width="650"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Width="90" HorizontalAlignment="Left" Margin="20, 0, 0, 0" FontSize="25" FontWeight="Medium" Grid.Row="2" Grid.Column="1">Слова: </TextBlock>
+        <TextBlock x:Name="WordsCount" Width="90" HorizontalAlignment="Center" Margin="40, 0, 0, 0" FontSize="25" FontWeight="Medium" Grid.Row="2" Grid.Column="1">1 / 15</TextBlock>
+        
+        <TextBlock x:Name="SetName" HorizontalAlignment="Center" FontSize="27" FontWeight="Medium" Grid.Row="2" Grid.Column="2">Brownie</TextBlock>
+        
+        <TextBox Background="#FFFAF8" IsHitTestVisible="False" IsReadOnly="True" Margin="20, 0, 0, 0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" FontWeight="Medium" Height="70" Width="250" Grid.Column="2" Grid.Row="4">Word</TextBox>
+        <TextBox Background="#FFFAF8" IsHitTestVisible="False" IsReadOnly="True" Margin="0, 0, 20, 0" HorizontalAlignment="Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" FontWeight="Medium" Height="70" Width="250" Grid.Column="2" Grid.Row="4">Translation</TextBox>
+
+        <Button x:Name="Correct" Click="Correct_Click" Background="#FFFCFB" Margin="35, 0, 0, 0" HorizontalAlignment="Left" FontSize="22" Height="60" Width="220" Grid.Column="2" Grid.Row="6">Верно</Button>
+        <Button x:Name="Incorrect" Click="Incorrect_Click" Background="#FFFCFB" Margin="0, 0, 35, 0" HorizontalAlignment="Right" FontSize="22" Height="60" Width="220" Grid.Column="2" Grid.Row="6">Неверно</Button>
         
     </Grid>
 </Page>

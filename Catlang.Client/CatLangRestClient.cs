@@ -2,6 +2,7 @@
 using Catlang.Client.Models;
 using Newtonsoft.Json;
 using RestSharp;
+using System;
 using System.Collections.Generic;
 
 namespace Catlang.Client
@@ -63,12 +64,73 @@ namespace Catlang.Client
         {
             var resource = $"sets";
             var request = new RestRequest(resource, Method.GET);
-            var response = client.Execute(request);
             request.AddHeader("Authorization", "Bearer " + token);
 
+            var response = client.Execute(request);
             var content = JsonConvert.DeserializeObject<GetAllSetsResponse>(response.Content);
 
             return content.Sets;
+        }
+
+        public static ConformityExercise StartConformityExercise(ExerciseFormat exerciseFormat, Guid setId)
+        {
+            var resource = $"exercises/create/conformity";
+            var request = new RestRequest(resource, Method.POST);
+            var body = new
+            {
+                ExerciseFormat = exerciseFormat,
+                SetId = setId
+            };
+            request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<ConformityExercise>(response.Content);
+
+            return content;
+        }
+
+        public static void CommitConformityAnswer(
+            ExerciseFormat exerciseFormat,
+            Guid exerciseId,
+            Guid setId,
+            int wordId,
+            string taskAnswer,
+            bool userChoice)
+        {
+            var resource = $"exercises/commit/conformity";
+            var request = new RestRequest(resource, Method.POST);
+            var body = new
+            {
+                ExerciseFormat = exerciseFormat,
+                ExerciseId = exerciseId,
+                SetId = setId,
+                WordId = wordId,
+                TaskAnswer = taskAnswer,
+                UserChoice = userChoice
+            };
+            request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            client.Execute(request);
+        }
+
+        public static ExerciseResult FinishExercise(Guid exerciseId, ExerciseFormat exerciseFormat)
+        {
+            var resource = $"exercises/finish";
+            var request = new RestRequest(resource, Method.POST);
+            var body = new
+            {
+                ExerciseId = exerciseId,
+                ExerciseFormat = exerciseFormat
+            };
+            request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<ExerciseResult>(response.Content);
+
+            return content;
         }
     }
 }
