@@ -24,10 +24,23 @@ namespace Catlang.Client.Pages.MainPages
             view = new SetsPageView(setModels);
             DataContext = view;
         }
+
+        private void SetsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var setWords = "";
+            foreach (var word in view.SelectedItem.Words)
+            {
+                setWords += word.Original + " - " + word.Translation + "\n";
+            }
+
+            SetName.Text = view.SelectedItem.StudyTopic;
+            SetWords.Text = setWords;
+        }
     }
 
     public class SetsPageView
     {
+        public SetModel SelectedItem { get; set; }
         public ObservableCollection<SetModel> Sets { get; set; }
 
         public SetsPageView(ObservableCollection<SetModel> sets)
