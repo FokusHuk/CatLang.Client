@@ -50,12 +50,17 @@ namespace Catlang.Client.Pages
 
         private void OpenConformityExercisePage()
         {
-            body.Content = new ConformityExercisePage();
+            body.Content = new ConformityExercisePage(() => OpenExerciseResultsPage());
         }
 
         private void OpenChoiceExercisePage()
         {
-            body.Content = new ChoiceExercisePage();
+            body.Content = new ChoiceExercisePage(() => OpenExerciseResultsPage());
+        }
+
+        private void OpenExerciseResultsPage()
+        {
+            body.Content = new ExerciseResultsPage();
         }
     }
 }

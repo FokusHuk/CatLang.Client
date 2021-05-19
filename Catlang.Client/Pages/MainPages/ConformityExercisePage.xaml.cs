@@ -1,4 +1,5 @@
 ﻿using Catlang.Client.Models;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -9,15 +10,18 @@ namespace Catlang.Client.Pages.MainPages
     /// </summary>
     public partial class ConformityExercisePage : Page
     {
+        private Action OpenExerciseResultsPage;
         private ConformityExercise exercise;
         private int currentTask;
         private int tasksCount;
 
         private string WordsCountValue() => (currentTask + 1) + " / " + tasksCount;
 
-        public ConformityExercisePage()
+        public ConformityExercisePage(Action openExerciseResultsPage)
         {
             InitializeComponent();
+
+            OpenExerciseResultsPage = openExerciseResultsPage;
 
             exercise = CatLangRestClient.StartConformityExercise(
                 StaticExerciseStorage.ExerciseFormat,
@@ -32,12 +36,26 @@ namespace Catlang.Client.Pages.MainPages
         private void Correct_Click(object sender, RoutedEventArgs e)
         {
             CommitAnswer(true);
+
+            if (currentTask == tasksCount - 1)
+            {
+                OpenExerciseResultsPage();
+                return;
+            }
+
             UpdateTask();
         }
 
         private void Incorrect_Click(object sender, RoutedEventArgs e)
         {
             CommitAnswer(false);
+
+            if (currentTask == tasksCount - 1)
+            {
+                OpenExerciseResultsPage();
+                return;
+            }
+
             UpdateTask();
         }
 

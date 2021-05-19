@@ -74,6 +74,9 @@
     <Compile Include="Pages\MainPages\ConformityExercisePage.xaml.cs">
       <DependentUpon>ConformityExercisePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MainPages\ExerciseResultsPage.xaml.cs">
+      <DependentUpon>ExerciseResultsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StaticExerciseStorage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPages\ExerciseCreationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPages\ExerciseResultsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

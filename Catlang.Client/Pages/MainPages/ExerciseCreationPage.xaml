@@ -28,7 +28,7 @@
 
         <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Medium" Grid.Row="2" Grid.Column="2">Формат упражнения</TextBlock>
 
-        <TabControl x:Name="ExerciseType" VerticalAlignment="Center" Height="53" Width="600" FontSize="18" Grid.Column="2" Grid.Row="3">
+        <TabControl x:Name="ExerciseType" SelectionChanged="ExerciseType_SelectionChanged" VerticalAlignment="Center" Height="53" Width="600" FontSize="18" Grid.Column="2" Grid.Row="3">
             <TabItem Background="#FFFAF8" Height="50" Width="298" Header="Английский-Русский" VerticalContentAlignment="Center"></TabItem>
             <TabItem Background="#FFFAF8" Height="50" Width="298" Header="Русский-Английский" VerticalContentAlignment="Center"></TabItem>
         </TabControl>

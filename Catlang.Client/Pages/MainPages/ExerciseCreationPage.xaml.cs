@@ -31,7 +31,7 @@ namespace Catlang.Client.Pages.MainPages
             OpenChoiceExercisePage();
         }
 
-        private void SetExerciseFormat()
+        private void ExerciseType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ExerciseType.SelectedIndex == 0)
                 StaticExerciseStorage.ExerciseFormat = ExerciseFormat.EnRu;
