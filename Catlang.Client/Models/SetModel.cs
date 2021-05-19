@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Catlang.Client.Models
 {
     public class SetModel
     {
+        private string authorName;
+
         public SetModel(Guid id, string authorName, string studyTopic, string wordsLine, int popularity, double efficiency, double averageStudyTime, double complexity)
         {
             Id = id;
@@ -37,7 +41,11 @@ namespace Catlang.Client.Models
         }
 
         public Guid Id { get; set; }
-        public string AuthorName { get; set; }
+        public string AuthorName 
+        { 
+            get => authorName;
+            set { authorName = value; }
+        }
         public string StudyTopic { get; set; }
         public string WordsLine { get; set; }
         public List<Word> Words { get; set; }
