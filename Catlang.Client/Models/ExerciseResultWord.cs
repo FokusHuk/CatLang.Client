@@ -9,8 +9,8 @@
             CorrectAnswer = correctAnswer;
         }
 
-        public string TaskWord { get; }
-        public string ChosenAnswer { get; }
-        public string CorrectAnswer { get; }
+        public string TaskWord { get; set; }
+        public string ChosenAnswer { get; set; }
+        public string CorrectAnswer { get; set; }
     }
 }

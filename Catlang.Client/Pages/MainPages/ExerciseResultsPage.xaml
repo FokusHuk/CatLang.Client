@@ -10,6 +10,63 @@
       Background="#FAF8FB">
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"></ColumnDefinition>
+            <ColumnDefinition Width="297"></ColumnDefinition>
+            <ColumnDefinition Width="600"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="260"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Medium" Grid.Row="2" Grid.Column="2">Результаты упражнения</TextBlock>
+        <TextBlock x:Name="CorrectAnswersStatistics" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" FontWeight="Medium" Grid.Row="3" Grid.Column="2">2 из 5</TextBlock>
+
+        <TextBlock x:Name="MistakesHeader" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Medium" Grid.Row="4" Grid.Column="2">Ошибки</TextBlock>
+
+        <Grid x:Name="MistakesTypes" Grid.Row="5" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="7"></ColumnDefinition>
+                <ColumnDefinition Width="189"></ColumnDefinition>
+                <ColumnDefinition Width="189"></ColumnDefinition>
+                <ColumnDefinition Width="189"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="2">Слово</TextBox>
+            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="3">Ваш ответ</TextBox>
+            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="4">Правильный ответ</TextBox>
+        </Grid>
         
+        <ListView Background="#FFFAF8" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="Mistakes" ItemsSource="{Binding Mistakes}" Grid.Row="6" Grid.Column="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="50" Grid.Column="2" Grid.Row="5" Width="568">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0"></ColumnDefinition>
+                            <ColumnDefinition Width="189"></ColumnDefinition>
+                            <ColumnDefinition Width="189"></ColumnDefinition>
+                            <ColumnDefinition Width="189"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding TaskWord}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="1"></TextBox>
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding ChosenAnswer}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="2"></TextBox>
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding CorrectAnswer}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="3"></TextBox>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="16" FontWeight="Normal" Grid.Row="7" Grid.Column="2">Для просмотра статистики перейдите в профиль</TextBlock>
     </Grid>
 </Page>

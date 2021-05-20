@@ -11,8 +11,8 @@ namespace Catlang.Client.Models
             WrongAnswers = wrongAnswers;
         }
 
-        public int CorrectAnswers { get; }
-        public int AnswersCount { get; }
-        public List<ExerciseResultWord> WrongAnswers { get; }
+        public int CorrectAnswers { get; set; }
+        public int AnswersCount { get; set; }
+        public List<ExerciseResultWord> WrongAnswers { get; set; }
     }
 }

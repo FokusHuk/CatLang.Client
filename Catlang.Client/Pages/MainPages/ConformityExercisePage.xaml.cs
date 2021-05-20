@@ -28,6 +28,8 @@ namespace Catlang.Client.Pages.MainPages
                 StaticExerciseStorage.SetId);
             currentTask = -1;
             tasksCount = exercise.Tasks.Count;
+
+            StaticExerciseStorage.ExerciseId = exercise.Id;
        
             SetName.Text = StaticExerciseStorage.SetName;
             UpdateTask();
