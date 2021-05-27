@@ -115,6 +115,47 @@ namespace Catlang.Client
             client.Execute(request);
         }
 
+        public static ChoiceExercise StartChoiceExercise(ExerciseFormat exerciseFormat, Guid setId)
+        {
+            var resource = $"exercises/create/choice";
+            var request = new RestRequest(resource, Method.POST);
+            var body = new
+            {
+                ExerciseFormat = exerciseFormat,
+                SetId = setId
+            };
+            request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<ChoiceExercise>(response.Content);
+
+            return content;
+        }
+
+        public static void CommitChoiceAnswer(
+            ExerciseFormat exerciseFormat,
+            Guid exerciseId,
+            Guid setId,
+            int wordId,
+            string chosenAnswer)
+        {
+            var resource = $"exercises/commit/choice";
+            var request = new RestRequest(resource, Method.POST);
+            var body = new
+            {
+                ExerciseFormat = exerciseFormat,
+                ExerciseId = exerciseId,
+                SetId = setId,
+                WordId = wordId,
+                ChosenAnswer = chosenAnswer
+            };
+            request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            client.Execute(request);
+        }
+
         public static ExerciseResult FinishExercise(Guid exerciseId, ExerciseFormat exerciseFormat)
         {
             var resource = $"exercises/finish";

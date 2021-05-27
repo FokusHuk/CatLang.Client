@@ -63,6 +63,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ChoiceExercise.cs" />
+    <Compile Include="Models\ChoiceExerciseTask.cs" />
     <Compile Include="Models\ConformityExercise.cs" />
     <Compile Include="Models\ConformityExerciseTask.cs" />
     <Compile Include="Models\ExerciseFormat.cs" />
