@@ -70,6 +70,7 @@
     <Compile Include="Models\ExerciseFormat.cs" />
     <Compile Include="Models\ExerciseResult.cs" />
     <Compile Include="Models\ExerciseResultWord.cs" />
+    <Compile Include="Models\StudiedSet.cs" />
     <Compile Include="Pages\MainPages\ConformityExerciseResult.xaml.cs">
       <DependentUpon>ConformityExerciseResult.xaml</DependentUpon>
     </Compile>

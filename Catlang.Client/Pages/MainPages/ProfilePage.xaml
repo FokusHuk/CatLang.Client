@@ -5,10 +5,89 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Catlang.Client.Pages.MainPages"
       mc:Ignorable="d" 
-      d:DesignHeight="620" d:DesignWidth="1200"
-      Title="ProfilePage">
+      d:DesignHeight="591" d:DesignWidth="1194"
+      Title="ProfilePage"
+      Background="#FAF8FB">
 
     <Grid>
-        <Label>Profile</Label>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="780"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="354"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"></RowDefinition>
+            <RowDefinition Height="21"></RowDefinition>
+            <RowDefinition Height="540"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TabControl Background="#FFFAF8" x:Name="StatisticsPanel" FontSize="14" Grid.Column="2" Grid.Row="2">
+            <TabItem Background="#F8FBFA" FontWeight="Medium" FontSize="18" Height="40" Width="258" Header="Использованные наборы" VerticalContentAlignment="Center">
+                <ListView BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="#FFFAF8" Height="500" Width="770" x:Name="UsedSetsList" ItemsSource="{Binding UsedSets}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#D4CDF6" BorderThickness="2" Height="100" Width="758">
+                                <Grid Background="#FFFBE8" Height="100" HorizontalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"></ColumnDefinition>
+                                        <ColumnDefinition Width="550"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0"></ColumnDefinition>
+                                            <ColumnDefinition Width="250"></ColumnDefinition>
+                                            <ColumnDefinition Width="120"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0"></RowDefinition>
+                                            <RowDefinition Height="50"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBox Margin="5, 0, 0, 0" IsHitTestVisible="False" IsReadOnly="True" FontSize="18" FontWeight="Medium" BorderThickness="1" Height="30" Width="240" HorizontalAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Text="{Binding StudyTopic}" x:Name="StudyTopic"/>
+
+                                        <TextBlock Margin="0, 6, 0, 0" FontSize="10" FontStyle="Italic" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" Height="20" Width="90">Автор</TextBlock>
+                                        <TextBlock Margin="0, 0, 0, 6" FontSize="14" FontWeight="Medium" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1" Height="20" Width="90" Text="{Binding AuthorName}" x:Name="AuthorName"/>
+
+                                        <TextBlock Margin="5, 0, 0, 0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="15" Width="565" FontSize="10" FontStyle="Italic" Grid.Row="2" Grid.Column="1">Статус</TextBlock>
+                                        <TextBox Margin="5, 10, 0, 0" IsHitTestVisible="False" IsReadOnly="True" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Width="120" FontSize="15" BorderThickness="1" Grid.Row="2" Grid.Column="1" Text="{Binding Status}" x:Name="Words"/>
+                                    </Grid>
+                                    <Grid Grid.Column="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0"></RowDefinition>
+                                            <RowDefinition Height="50"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBox Margin="0, 5, 0, 0" VerticalAlignment="Top" IsHitTestVisible="False" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="20" Width="190" IsReadOnly="True" BorderThickness="1.5" Grid.Row="1">Количество попыток</TextBox>
+                                        <TextBox Margin="0, 0, 0, 5" VerticalAlignment="Bottom" IsHitTestVisible="False" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="22" Width="190" IsReadOnly="True" BorderThickness="1.5" Grid.Row="1" Text="{Binding AttemptsCount}" x:Name="AttemptsCount"/>
+
+                                        <TextBox Margin="0, 5, 0, 0" VerticalAlignment="Top" IsHitTestVisible="False" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="20" Width="190" IsReadOnly="True" BorderThickness="1.5" Grid.Row="2">Правильные ответы</TextBox>
+                                        <TextBox Margin="0, 0, 0, 5" VerticalAlignment="Bottom" IsHitTestVisible="False" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="22" Width="190" IsReadOnly="True" BorderThickness="1.5" Grid.Row="2" Text="{Binding CorrectAnswers}" x:Name="CorrectAnswers"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
+            <TabItem Background="#F8FBFA" FontWeight="Medium" FontSize="18" Height="40" Width="258" Header="Изученные слова" VerticalContentAlignment="Center">
+                <Grid>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Background="#F8FBFA" FontWeight="Medium" FontSize="18" Height="40" Width="258" Header="Созданные наборы" VerticalContentAlignment="Center">
+                <Grid>
+                    <TextBlock>Wow</TextBlock>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>
