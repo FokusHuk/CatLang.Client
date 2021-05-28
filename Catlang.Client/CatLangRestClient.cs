@@ -173,5 +173,29 @@ namespace Catlang.Client
 
             return content;
         }
+
+        public static List<StudiedSetDto> GetStudiedSets()
+        {
+            var resource = $"sets/studied/user";
+            var request = new RestRequest(resource, Method.GET);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<GetStudiedSetsResponse>(response.Content);
+
+            return content.StudiedSets;
+        }
+
+        public static Set GetSetById(Guid setId)
+        {
+            var resource = $"sets/{setId}";
+            var request = new RestRequest(resource, Method.GET);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<Set>(response.Content);
+
+            return content;
+        }
     }
 }

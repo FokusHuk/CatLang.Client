@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contracts\GetStudiedSetsResponse.cs" />
     <Compile Include="Models\ChoiceExercise.cs" />
     <Compile Include="Models\ChoiceExerciseTask.cs" />
     <Compile Include="Models\ConformityExercise.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Models\ExerciseResult.cs" />
     <Compile Include="Models\ExerciseResultWord.cs" />
     <Compile Include="Models\StudiedSet.cs" />
+    <Compile Include="Models\StudiedSetDto.cs" />
     <Compile Include="Pages\MainPages\ConformityExerciseResult.xaml.cs">
       <DependentUpon>ConformityExerciseResult.xaml</DependentUpon>
     </Compile>

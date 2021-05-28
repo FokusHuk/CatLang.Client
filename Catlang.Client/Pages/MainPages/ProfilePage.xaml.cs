@@ -1,5 +1,6 @@
 ﻿using Catlang.Client.Models;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Controls;
 
 namespace Catlang.Client.Pages.MainPages
@@ -15,17 +16,21 @@ namespace Catlang.Client.Pages.MainPages
         {
             InitializeComponent();
 
-            view = new ProfilePageView(new ObservableCollection<StudiedSet>()
-            {
-                new StudiedSet("Topic", "Name", "Изучено", "10", "10 из 12"),
-                new StudiedSet("Topic", "Name", "Изучено", "10", "10 из 12"),
-                new StudiedSet("Topic", "Name", "Изучено", "10", "10 из 12"),
-                new StudiedSet("Topic", "Name", "Изучено", "10", "10 из 12"),
-                new StudiedSet("Topic", "Name", "Изучено", "10", "10 из 12"),
-                new StudiedSet("Topic", "Name", "Изучено", "10", "10 из 12"),
-                new StudiedSet("Topic", "Name", "Изучено", "10", "10 из 12")
-            });
+            var studiedSetDtos = CatLangRestClient.GetStudiedSets();
+            var studiedsSetsInfo = studiedSetDtos
+                .Select(s => CatLangRestClient.GetSetById(s.SetId))
+                .ToList();
+            var studiedSets = new ObservableCollection<StudiedSet>(
+                studiedSetDtos
+                    .Select(s => new StudiedSet(
+                        studiedsSetsInfo.Single(i => i.Id == s.SetId).StudyTopic,
+                        studiedsSetsInfo.Single(i => i.Id == s.SetId).AuthorName,
+                        s.IsStudied ? "Изучено" : "Не изучено",
+                        s.AttemptsCount.ToString(),
+                        s.CorrectAnswers + " из " + s.AnswersCount))
+                    .ToList());
 
+            view = new ProfilePageView(studiedSets);
             DataContext = view;
         }
 
