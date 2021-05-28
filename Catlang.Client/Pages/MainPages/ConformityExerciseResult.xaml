@@ -1,19 +1,19 @@
-﻿<Page x:Class="Catlang.Client.Pages.MainPages.ChoiceExerciseResultsPage"
+﻿<Page x:Class="Catlang.Client.Pages.ConformityExerciseResultsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Catlang.Client.Pages.MainPages"
+      xmlns:local="clr-namespace:Catlang.Client.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="591" d:DesignWidth="1194"
-      Title="ExerciseResultsPage"
+      Title="ConformityExerciseResult"
       Background="#FAF8FB">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0"></ColumnDefinition>
-            <ColumnDefinition Width="297"></ColumnDefinition>
-            <ColumnDefinition Width="600"></ColumnDefinition>
+            <ColumnDefinition Width="197"></ColumnDefinition>
+            <ColumnDefinition Width="790"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -40,28 +40,33 @@
                 <ColumnDefinition Width="189"></ColumnDefinition>
                 <ColumnDefinition Width="189"></ColumnDefinition>
                 <ColumnDefinition Width="189"></ColumnDefinition>
+                <ColumnDefinition Width="189"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="2">Слово</TextBox>
-            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="3">Ваш ответ</TextBox>
-            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="4">Правильный ответ</TextBox>
+            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="3">Перевод</TextBox>
+            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="4">Ваш ответ</TextBox>
+            <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#F8FBFA" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="25" Width="185" VerticalAlignment="Center" FontSize="16" Grid.Column="5">Правильный перевод</TextBox>
         </Grid>
-        
+
         <ListView Background="#FFFAF8" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="Mistakes" ItemsSource="{Binding Mistakes}" Grid.Row="6" Grid.Column="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="50" Grid.Column="2" Grid.Row="5" Width="568">
+                    <Grid Height="50" Grid.Column="2" Grid.Row="5" Width="757">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0"></ColumnDefinition>
                             <ColumnDefinition Width="189"></ColumnDefinition>
                             <ColumnDefinition Width="189"></ColumnDefinition>
                             <ColumnDefinition Width="189"></ColumnDefinition>
+                            <ColumnDefinition Width="189"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
                         <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding TaskWord}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="1"></TextBox>
-                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding ChosenAnswer}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="2"></TextBox>
-                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding CorrectAnswer}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="3"></TextBox>
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding TaskAnswer}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="2"></TextBox>
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding UserAnswer}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="3"></TextBox>
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="{Binding CorrectAnswer}" Background="#FFFCFB" Width="185" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="4"></TextBox>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

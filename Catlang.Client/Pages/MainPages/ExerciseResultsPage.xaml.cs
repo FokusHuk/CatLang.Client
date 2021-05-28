@@ -7,11 +7,11 @@ namespace Catlang.Client.Pages.MainPages
     /// <summary>
     /// Логика взаимодействия для ExerciseResultsPage.xaml
     /// </summary>
-    public partial class ExerciseResultsPage : Page
+    public partial class ChoiceExerciseResultsPage : Page
     {
         ExerciseResultsPageView view;
 
-        public ExerciseResultsPage()
+        public ChoiceExerciseResultsPage()
         {
             InitializeComponent();
 

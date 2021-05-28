@@ -70,6 +70,9 @@
     <Compile Include="Models\ExerciseFormat.cs" />
     <Compile Include="Models\ExerciseResult.cs" />
     <Compile Include="Models\ExerciseResultWord.cs" />
+    <Compile Include="Pages\MainPages\ConformityExerciseResult.xaml.cs">
+      <DependentUpon>ConformityExerciseResult.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MainPages\ChoiceExercisePage.xaml.cs">
       <DependentUpon>ChoiceExercisePage.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Authentication\RegistrationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainPages\ConformityExerciseResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
