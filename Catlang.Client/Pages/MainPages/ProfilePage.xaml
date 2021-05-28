@@ -142,7 +142,7 @@
                         <TextBox BorderThickness="1.2" TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="7">Последнее повторение</TextBox>
                     </Grid>
 
-                    <ListView Margin="-6, 0, -6, 0" BorderThickness="0" Background="#FFFAF8" x:Name="StudiedWords" ItemsSource="{Binding StudiedWords}" Grid.Row="3">
+                    <ListView ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="-6, 0, -6, 0" BorderThickness="0" Background="#FFFAF8" x:Name="StudiedWords" ItemsSource="{Binding StudiedWords}" Grid.Row="3">
                         <ListView.ItemTemplate> 
                             <DataTemplate>
                                 <Grid Height="30" Width="770" Grid.Row="2" Background="#FFFBE8" HorizontalAlignment="Stretch">
@@ -171,9 +171,40 @@
                 </Grid>
             </TabItem>
             <TabItem Background="#F8FBFA" FontWeight="Medium" FontSize="18" Height="40" Width="258" Header="Созданные наборы" VerticalContentAlignment="Center">
-                <Grid>
-                    <TextBlock>Wow</TextBlock>
-                </Grid>
+                <ListView  ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="#FFFAF8" Height="500" Width="770" x:Name="CreatedSetsList" ItemsSource="{Binding CreatedSets}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#D4CDF6" BorderThickness="1.5" Height="80" Width="755">
+                                <Grid Height="60">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"></ColumnDefinition>
+                                        <ColumnDefinition Width="200"></ColumnDefinition>
+                                        <ColumnDefinition Width="70"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="120"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBox Margin="0, 10, 0, 0" VerticalAlignment="Top" IsHitTestVisible="False" IsReadOnly="True" FontSize="16" FontWeight="Medium" BorderThickness="1.5" Height="30" Width="160" HorizontalAlignment="Left" VerticalContentAlignment="Center" Grid.Column="1" Text="{Binding StudyTopic}" x:Name="StudyTopic"/>
+
+                                    <TextBox Margin="0, 10, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Top" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="3">Сложность</TextBox>
+                                    <TextBox Margin="0, 18, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="3" Text="{Binding Complexity}" x:Name="Complexity"/>
+
+                                    <TextBox Margin="0, 10, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Top" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="4">Эффективность</TextBox>
+                                    <TextBox Margin="0, 18, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="4" Text="{Binding Efficiency}" x:Name="Efficiency"/>
+
+                                    <TextBox Margin="0, 10, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Top" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="5">Популярность</TextBox>
+                                    <TextBox Margin="0, 18, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="5" Text="{Binding Popularity}" x:Name="Popularity"/>
+
+                                    <TextBox Margin="0, 10, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" FontStyle="Italic" VerticalAlignment="Top" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="6">Время изучения</TextBox>
+                                    <TextBox Margin="0, 18, 0, 0" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsHitTestVisible="False" VerticalAlignment="Center" Height="20" IsReadOnly="True" HorizontalAlignment="Stretch" BorderThickness="1.5" Grid.Column="6" Text="{Binding AverageStudyTime}" x:Name="StudyTime"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </TabItem>
         </TabControl>
     </Grid>

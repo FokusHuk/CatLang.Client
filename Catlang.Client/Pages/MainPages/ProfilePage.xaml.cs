@@ -49,7 +49,7 @@ namespace Catlang.Client.Pages.MainPages
 
             var viewStudiedWords = new ObservableCollection<StudiedWord>(studiedWords);
 
-            view = new ProfilePageView(studiedSets, viewStudiedWords);
+            view = new ProfilePageView(studiedSets, viewStudiedWords, null);
             DataContext = view;
         }
 
@@ -120,7 +120,8 @@ namespace Catlang.Client.Pages.MainPages
 
             view = new ProfilePageView(
                 view.UsedSets,
-                new ObservableCollection<StudiedWord>(filteredStudiedWords));
+                new ObservableCollection<StudiedWord>(filteredStudiedWords),
+                view.CreatedSets);
             DataContext = view;
         }
     }
@@ -129,19 +130,23 @@ namespace Catlang.Client.Pages.MainPages
     {
         public ObservableCollection<StudiedSet> UsedSets { get; set; }
         public ObservableCollection<StudiedWord> StudiedWords { get; set; }
+        public ObservableCollection<Set> CreatedSets { get; set; }
 
         public ProfilePageView(
             ObservableCollection<StudiedSet> usedSets,
-            ObservableCollection<StudiedWord> studiedWords)
+            ObservableCollection<StudiedWord> studiedWords,
+            ObservableCollection<Set> createdSets)
         {
             UsedSets = usedSets;
             StudiedWords = studiedWords;
+            CreatedSets = createdSets;
         }
 
         public ProfilePageView(ProfilePageView view)
         {
             UsedSets = view.UsedSets;
             StudiedWords = view.StudiedWords;
+            CreatedSets = view.CreatedSets;
         }
     }
 }
