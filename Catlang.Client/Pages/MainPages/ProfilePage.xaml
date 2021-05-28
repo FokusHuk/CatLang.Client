@@ -31,7 +31,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Border BorderBrush="#D4CDF6" BorderThickness="2" Height="100" Width="758">
-                                <Grid Background="#FFFBE8" Height="100" HorizontalAlignment="Stretch">
+                                <Grid Background="#FFFAF8" Height="100" HorizontalAlignment="Stretch">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="0"></ColumnDefinition>
                                         <ColumnDefinition Width="550"></ColumnDefinition>
@@ -82,11 +82,46 @@
                 <Grid Height="500" Width="770">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Grid Background="#FFFBE8" Grid.Row="1" HorizontalAlignment="Stretch">
+                    <Grid Background="#FFFEFE" Grid.Row="1" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0"></ColumnDefinition>
+                            <ColumnDefinition Width="140"></ColumnDefinition>
+                            <ColumnDefinition Width="120"></ColumnDefinition>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock FontWeight="Normal" FontSize="16" Margin="0, 0, 0, 3" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1">Фильтровать:</TextBlock>
+                        
+                        <CheckBox Checked="StudiedFilter_Checked" Unchecked="StudiedFilter_Unchecked" x:Name="StudiedFilter" IsChecked="True" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
+                            <TextBlock FontWeight="Normal"  FontSize="12" Text="Изучено" Margin="0,-1,0,0"/>
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+
+                        <CheckBox Checked="InProcessFilter_Checked" Unchecked="InProcessFilter_Unchecked" x:Name="InProcessFilter" IsChecked="True" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3">
+                            <TextBlock FontWeight="Normal"  FontSize="12" Text="В процессе" Margin="0,-1,0,0"/>
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+
+                        <CheckBox Checked="NotStudiedFilter_Checked" Unchecked="NotStudiedFilter_Unchecked" x:Name="NotStudiedFilter" IsChecked="True" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4">
+                            <TextBlock FontWeight="Normal"  FontSize="12" Text="Не изучено" Margin="0,-1,0,0"/>
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                    </Grid>
+                    
+                    <Grid Background="#FFFBE8" Grid.Row="2" HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0"></ColumnDefinition>
                             <ColumnDefinition Width="150"></ColumnDefinition>
@@ -98,16 +133,16 @@
                             <ColumnDefinition Width="100*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1">Слово</TextBox>
-                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2">Перевод</TextBox>
-                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3">Статус</TextBox>
-                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="4">Фактор риска</TextBox>
-                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="5">Верные ответы</TextBox>
-                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="6">Неверные ответы</TextBox>
-                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="7">Последнее повторение</TextBox>
+                        <TextBox BorderThickness="1.2" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1">Слово</TextBox>
+                        <TextBox BorderThickness="1.2" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2">Перевод</TextBox>
+                        <TextBox BorderThickness="1.2" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3">Статус</TextBox>
+                        <TextBox BorderThickness="1.2" TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="4">Фактор риска</TextBox>
+                        <TextBox BorderThickness="1.2" TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="5">Верные ответы</TextBox>
+                        <TextBox BorderThickness="1.2" TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="6">Неверные ответы</TextBox>
+                        <TextBox BorderThickness="1.2" TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFEF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="7">Последнее повторение</TextBox>
                     </Grid>
 
-                    <ListView Margin="-6, 0, -6, 0" BorderThickness="0" Background="#FFFAF8" x:Name="StudiedWords" ItemsSource="{Binding StudiedWords}" Grid.Row="2">
+                    <ListView Margin="-6, 0, -6, 0" BorderThickness="0" Background="#FFFAF8" x:Name="StudiedWords" ItemsSource="{Binding StudiedWords}" Grid.Row="3">
                         <ListView.ItemTemplate> 
                             <DataTemplate>
                                 <Grid Height="30" Width="770" Grid.Row="2" Background="#FFFBE8" HorizontalAlignment="Stretch">

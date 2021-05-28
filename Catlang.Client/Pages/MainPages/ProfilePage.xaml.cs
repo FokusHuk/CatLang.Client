@@ -3,6 +3,7 @@ using Catlang.Client.Models;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Controls;
+using System.Collections.Generic;
 
 namespace Catlang.Client.Pages.MainPages
 {
@@ -12,6 +13,7 @@ namespace Catlang.Client.Pages.MainPages
     public partial class ProfilePage : Page
     {
         ProfilePageView view;
+        List<StudiedWord> studiedWords;
 
         public ProfilePage()
         {
@@ -32,8 +34,8 @@ namespace Catlang.Client.Pages.MainPages
                     .ToList());
 
             var studiedWordsDtos = CatLangRestClient.GetStudiedWords();
-            var studiedWords = new ObservableCollection<StudiedWord>(
-                studiedWordsDtos
+
+            studiedWords = studiedWordsDtos
                     .Select(w =>
                         new StudiedWord(
                             w.Word,
@@ -43,9 +45,11 @@ namespace Catlang.Client.Pages.MainPages
                             w.LastAppearanceDate.Date.ToShortDateString(),
                             GetWordsStudyStatus(w.Status)))
                     .OrderBy(w => w.Word.Original)
-                    .ToList());
+                    .ToList();
 
-            view = new ProfilePageView(studiedSets, studiedWords);
+            var viewStudiedWords = new ObservableCollection<StudiedWord>(studiedWords);
+
+            view = new ProfilePageView(studiedSets, viewStudiedWords);
             DataContext = view;
         }
 
@@ -57,6 +61,67 @@ namespace Catlang.Client.Pages.MainPages
                 return "В процессе";
             else
                 return "Не изучено";
+        }
+
+        private void StudiedFilter_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            FilterStudiedWords();
+        }
+
+        private void StudiedFilter_Unchecked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            FilterStudiedWords();
+        }
+
+        private void InProcessFilter_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            FilterStudiedWords();
+        }
+
+        private void InProcessFilter_Unchecked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            FilterStudiedWords();
+        }
+
+        private void NotStudiedFilter_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            FilterStudiedWords();
+        }
+
+        private void NotStudiedFilter_Unchecked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            FilterStudiedWords();
+        }
+
+        private void FilterStudiedWords()
+        {
+            if (studiedWords == null || view == null || StudiedFilter == null || InProcessFilter == null || NotStudiedFilter == null) return;
+
+            var filteredStudiedWords = studiedWords;
+
+            if (!(bool)StudiedFilter.IsChecked)
+            {
+                filteredStudiedWords = filteredStudiedWords
+                    .Where(w => w.Status != "Изучено")
+                    .ToList();
+            }
+            if (!(bool)InProcessFilter.IsChecked)
+            {
+                filteredStudiedWords = filteredStudiedWords
+                    .Where(w => w.Status != "В процессе")
+                    .ToList();
+            }
+            if (!(bool)NotStudiedFilter.IsChecked)
+            {
+                filteredStudiedWords = filteredStudiedWords
+                    .Where(w => w.Status != "Не изучено")
+                    .ToList();
+            }
+
+            view = new ProfilePageView(
+                view.UsedSets,
+                new ObservableCollection<StudiedWord>(filteredStudiedWords));
+            DataContext = view;
         }
     }
 
@@ -71,6 +136,12 @@ namespace Catlang.Client.Pages.MainPages
         {
             UsedSets = usedSets;
             StudiedWords = studiedWords;
+        }
+
+        public ProfilePageView(ProfilePageView view)
+        {
+            UsedSets = view.UsedSets;
+            StudiedWords = view.StudiedWords;
         }
     }
 }
