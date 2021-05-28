@@ -79,8 +79,60 @@
                 </ListView>
             </TabItem>
             <TabItem Background="#F8FBFA" FontWeight="Medium" FontSize="18" Height="40" Width="258" Header="Изученные слова" VerticalContentAlignment="Center">
-                <Grid>
-                    
+                <Grid Height="500" Width="770">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Background="#FFFBE8" Grid.Row="1" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0"></ColumnDefinition>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="150"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="80"></ColumnDefinition>
+                            <ColumnDefinition Width="80"></ColumnDefinition>
+                            <ColumnDefinition Width="90"></ColumnDefinition>
+                            <ColumnDefinition Width="100*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1">Слово</TextBox>
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2">Перевод</TextBox>
+                        <TextBox IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3">Статус</TextBox>
+                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="4">Фактор риска</TextBox>
+                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="5">Верные ответы</TextBox>
+                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="6">Неверные ответы</TextBox>
+                        <TextBox TextWrapping="Wrap" IsReadOnly="True" IsHitTestVisible="False" Background="#FFFAF8" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="7">Последнее повторение</TextBox>
+                    </Grid>
+
+                    <ListView Margin="-6, 0, -6, 0" BorderThickness="0" Background="#FFFAF8" x:Name="StudiedWords" ItemsSource="{Binding StudiedWords}" Grid.Row="2">
+                        <ListView.ItemTemplate> 
+                            <DataTemplate>
+                                <Grid Height="30" Width="770" Grid.Row="2" Background="#FFFBE8" HorizontalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition Width="150"></ColumnDefinition>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="90"></ColumnDefinition>
+                                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBox Text="{Binding Word.Original}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1"></TextBox>
+                                    <TextBox Text="{Binding Word.Translation}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2"></TextBox>
+                                    <TextBox Text="{Binding StudyStatus}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3"></TextBox>
+                                    <TextBox Text="{Binding RiskFactor}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="4"></TextBox>
+                                    <TextBox Text="{Binding CorrectAnswers}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="5"></TextBox>
+                                    <TextBox Text="{Binding IncorrectAnswers}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="6"></TextBox>
+                                    <TextBox Text="{Binding LastAppearanceDate}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="7"></TextBox>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </Grid>
             </TabItem>
             <TabItem Background="#F8FBFA" FontWeight="Medium" FontSize="18" Height="40" Width="258" Header="Созданные наборы" VerticalContentAlignment="Center">

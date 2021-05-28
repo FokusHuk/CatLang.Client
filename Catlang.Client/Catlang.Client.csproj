@@ -73,6 +73,8 @@
     <Compile Include="Models\ExerciseResultWord.cs" />
     <Compile Include="Models\StudiedSet.cs" />
     <Compile Include="Models\StudiedSetDto.cs" />
+    <Compile Include="Models\StudiedWord.cs" />
+    <Compile Include="Models\WordStudyStatus.cs" />
     <Compile Include="Pages\MainPages\ConformityExerciseResult.xaml.cs">
       <DependentUpon>ConformityExerciseResult.xaml</DependentUpon>
     </Compile>
