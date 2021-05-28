@@ -31,28 +31,32 @@ namespace Catlang.Client.Pages.MainPages
                         s.CorrectAnswers + " из " + s.AnswersCount))
                     .ToList());
 
-            var studiedWords = new ObservableCollection<StudiedWord>()
-            {
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete),
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete),
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete),
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete),
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete),
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete),
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete),
-                new StudiedWord(Guid.NewGuid(), new Word(0, "Original", "Перевод"),
-                12.5, 1, 5, DateTime.Now, WordStudyStatus.Complete)
-            };
+            var studiedWordsDtos = CatLangRestClient.GetStudiedWords();
+            var studiedWords = new ObservableCollection<StudiedWord>(
+                studiedWordsDtos
+                    .Select(w =>
+                        new StudiedWord(
+                            w.Word,
+                            w.RiskFactor + "%",
+                            w.CorrectAnswers,
+                            w.IncorrectAnswers,
+                            w.LastAppearanceDate.Date.ToShortDateString(),
+                            GetWordsStudyStatus(w.Status)))
+                    .OrderBy(w => w.Word.Original)
+                    .ToList());
 
             view = new ProfilePageView(studiedSets, studiedWords);
             DataContext = view;
+        }
+
+        private string GetWordsStudyStatus(WordStudyStatus status)
+        {
+            if (status == WordStudyStatus.Complete)
+                return "Изучено";
+            else if (status == WordStudyStatus.NeedPractice)
+                return "В процессе";
+            else
+                return "Не изучено";
         }
     }
 

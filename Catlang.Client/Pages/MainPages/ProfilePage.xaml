@@ -122,13 +122,13 @@
                                         <ColumnDefinition Width="100*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBox Text="{Binding Word.Original}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1"></TextBox>
-                                    <TextBox Text="{Binding Word.Translation}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2"></TextBox>
-                                    <TextBox Text="{Binding StudyStatus}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3"></TextBox>
-                                    <TextBox Text="{Binding RiskFactor}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="4"></TextBox>
-                                    <TextBox Text="{Binding CorrectAnswers}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="5"></TextBox>
-                                    <TextBox Text="{Binding IncorrectAnswers}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="6"></TextBox>
-                                    <TextBox Text="{Binding LastAppearanceDate}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="7"></TextBox>
+                                    <TextBox Text="{Binding Word.Original}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1"></TextBox>
+                                    <TextBox Text="{Binding Word.Translation}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2"></TextBox>
+                                    <TextBox Text="{Binding Status}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3"></TextBox>
+                                    <TextBox Text="{Binding RiskFactor}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="4"></TextBox>
+                                    <TextBox Text="{Binding CorrectAnswers}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="5"></TextBox>
+                                    <TextBox Text="{Binding IncorrectAnswers}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="6"></TextBox>
+                                    <TextBox Text="{Binding LastAppearanceDate}" IsReadOnly="True" IsHitTestVisible="False" Background="#FAFBFB" FontWeight="Normal" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="7"></TextBox>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>

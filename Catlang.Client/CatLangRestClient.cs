@@ -197,5 +197,17 @@ namespace Catlang.Client
 
             return content;
         }
+
+        public static List<StudiedWordDto> GetStudiedWords()
+        {
+            var resource = $"words/studied";
+            var request = new RestRequest(resource, Method.GET);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<GetStudiedWordsResponse>(response.Content);
+
+            return content.StudiedWords;
+        }
     }
 }

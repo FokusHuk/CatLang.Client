@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Contracts\GetStudiedSetsResponse.cs" />
+    <Compile Include="Contracts\GetStudiedWordsResponse.cs" />
     <Compile Include="Models\ChoiceExercise.cs" />
     <Compile Include="Models\ChoiceExerciseTask.cs" />
     <Compile Include="Models\ConformityExercise.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Models\StudiedSet.cs" />
     <Compile Include="Models\StudiedSetDto.cs" />
     <Compile Include="Models\StudiedWord.cs" />
+    <Compile Include="Models\StudiedWordDto.cs" />
     <Compile Include="Models\WordStudyStatus.cs" />
     <Compile Include="Pages\MainPages\ConformityExerciseResult.xaml.cs">
       <DependentUpon>ConformityExerciseResult.xaml</DependentUpon>
