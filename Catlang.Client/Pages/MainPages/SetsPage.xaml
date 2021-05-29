@@ -138,7 +138,7 @@
                 </Grid>
             </Border>
 
-            <Button x:Name="CreateSet" Background="#F8FBFA" Grid.Row="2" FontSize="22" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="70">Создать свой набор</Button>
+            <Button x:Name="CreateSet" Click="CreateSet_Click" Background="#F8FBFA" Grid.Row="2" FontSize="22" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Height="70">Создать свой набор</Button>
         </Grid>
     </Grid>
 </Page>

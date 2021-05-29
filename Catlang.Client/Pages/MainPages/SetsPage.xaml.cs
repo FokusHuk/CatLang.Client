@@ -13,13 +13,15 @@ namespace Catlang.Client.Pages.MainPages
     public partial class SetsPage : Page
     {
         Action OpenExerciseCreationPage;
+        Action OpenSetCreationPage;
         private SetsPageView view;
 
-        public SetsPage(Action openExerciseCreationPage)
+        public SetsPage(Action openExerciseCreationPage, Action openSetCreationPage)
         {
             InitializeComponent();
 
             OpenExerciseCreationPage = openExerciseCreationPage;
+            OpenSetCreationPage = openSetCreationPage;
 
             UpdatePage();
         }
@@ -99,6 +101,11 @@ namespace Catlang.Client.Pages.MainPages
             DataContext = view;
 
             LearnSet.IsEnabled = false;
+        }
+
+        private void CreateSet_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            OpenSetCreationPage();
         }
     }
 
