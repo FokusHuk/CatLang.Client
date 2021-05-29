@@ -21,13 +21,7 @@ namespace Catlang.Client.Pages.MainPages
 
             OpenExerciseCreationPage = openExerciseCreationPage;
 
-            var sets = CatLangRestClient.GetAllSets();
-            var setModels = new ObservableCollection<SetModel>(sets.Select(s => new SetModel(s)).ToList());
-
-            view = new SetsPageView(setModels);
-            DataContext = view;
-
-            LearnSet.IsEnabled = false;
+            UpdatePage();
         }
 
         private void SetsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -86,11 +80,7 @@ namespace Catlang.Client.Pages.MainPages
 
         private void UpdateSets_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            var sets = CatLangRestClient.GetAllSets();
-            var setModels = new ObservableCollection<SetModel>(sets.Select(s => new SetModel(s)).ToList());
-
-            view = new SetsPageView(setModels);
-            DataContext = view;
+            UpdatePage();
         }
 
         private void LearnSet_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -98,6 +88,17 @@ namespace Catlang.Client.Pages.MainPages
             StaticExerciseStorage.SetId = view.SelectedItem.Id;
             StaticExerciseStorage.SetName = view.SelectedItem.StudyTopic;
             OpenExerciseCreationPage();
+        }
+
+        private void UpdatePage()
+        {
+            var sets = CatLangRestClient.GetAllSets();
+            var setModels = new ObservableCollection<SetModel>(sets.Select(s => new SetModel(s)).ToList());
+
+            view = new SetsPageView(setModels);
+            DataContext = view;
+
+            LearnSet.IsEnabled = false;
         }
     }
 

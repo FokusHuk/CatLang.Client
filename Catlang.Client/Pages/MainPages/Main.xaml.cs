@@ -20,7 +20,7 @@ namespace Catlang.Client.Pages
 
             applicationBar = new ApplicationBar(() => OpenSetsPage(), () => OpenRecommendationPage(), () => OpenProfilePage());
             setsPage = new SetsPage(() => OpenExerciseCreationPage());
-            recommendationPage = new RecommendationPage();
+            recommendationPage = new RecommendationPage(() => OpenExerciseCreationPage());
             profilePage = new ProfilePage();
             exerciseCreationPage = new ExerciseCreationPage(() => OpenConformityExercisePage(), () => OpenChoiceExercisePage());
 
