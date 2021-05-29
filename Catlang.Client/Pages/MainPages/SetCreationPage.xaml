@@ -70,5 +70,15 @@
 
             <Button x:Name="CreateSet" Click="CreateSet_Click" Background="#F8FBFA" VerticalAlignment="Bottom" Height="50" Width="300" FontSize="18" Grid.Row="7">Создать набор</Button>
         </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="SearchField" LostFocus="SearchField_LostFocus" TextChanged="SearchField_TextChanged" GotMouseCapture="SearchField_GotMouseCapture" VerticalContentAlignment="Center" Height="40" Width="400" FontSize="20" Grid.Row="1"></TextBox>
+        </Grid>
     </Grid>
 </Page>
