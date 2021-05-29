@@ -49,8 +49,8 @@
                     </StackPanel>
                 </Button>
             </StackPanel>
-            
-            <ListView Background="#FFFAF8" x:Name="SetsList" ItemsSource="{Binding Sets}" Grid.Row="2" SelectionChanged="SetsList_SelectionChanged" SelectedItem="{Binding SelectedItem}" SelectedIndex="{Binding SelectedIndex}">
+
+            <ListView ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="#FFFAF8" x:Name="SetsList" ItemsSource="{Binding Sets}" Grid.Row="2" SelectionChanged="SetsList_SelectionChanged" SelectedItem="{Binding SelectedItem}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Background="#FFFCFB" Orientation="Horizontal" Height="100" HorizontalAlignment="Stretch">
