@@ -30,11 +30,23 @@ namespace Catlang.Client.Pages.MainPages
                     new Word(5, "Word5", "Translation"),
                     new Word(6, "Word6", "Translation"),
                     new Word(7, "Word7", "Translation")
+                },
+                new ObservableCollection<Word>()
+                {
+                    new Word(1, "Test1", "Translation"),
+                    new Word(2, "Test2", "Translation"),
+                    new Word(3, "Test3", "Translation"),
+                    new Word(4, "Test4", "Translation"),
+                    new Word(5, "Test5", "Translation"),
+                    new Word(6, "Test6", "Translation"),
+                    new Word(7, "Test7", "Translation")
                 });
             DataContext = view;
 
             SearchField.Text = SEARCH_FIELD_EMPTY_MESSAGE;
             SearchField.Foreground = Brushes.Gray;
+
+            CreateSet.IsEnabled = false;
         }
 
         private void RemoveWord_Click(object sender, RoutedEventArgs e)
@@ -42,6 +54,14 @@ namespace Catlang.Client.Pages.MainPages
             var button = sender as Button;
             var word = button.DataContext as Word;
             view.SetWords.Remove(word);
+        }
+
+        private void InsertWord_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var word = button.DataContext as Word;
+            if (!view.SetWords.Contains(word))
+                view.SetWords.Insert(0, word);
         }
 
         private void CreateSet_Click(object sender, RoutedEventArgs e)
@@ -77,16 +97,19 @@ namespace Catlang.Client.Pages.MainPages
     {
         public Word SelectedItem { get; set; }
         public ObservableCollection<Word> SetWords { get; set; }
+        public ObservableCollection<Word> Words { get; set; }
 
-        public SetCreationPageView(ObservableCollection<Word> setWords)
+        public SetCreationPageView(ObservableCollection<Word> setWords, ObservableCollection<Word> words)
         {
             SetWords = setWords;
+            Words = words;
         }
 
         public SetCreationPageView(SetCreationPageView view)
         {
             SelectedItem = null;
             SetWords = view.SetWords;
+            Words = view.Words;
         }
     }
 }
