@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Contracts\GetCreatedSetsResponse.cs" />
+    <Compile Include="Contracts\GetRecommendedSetsResponse.cs" />
     <Compile Include="Contracts\GetStudiedSetsResponse.cs" />
     <Compile Include="Contracts\GetStudiedWordsResponse.cs" />
     <Compile Include="Models\ChoiceExercise.cs" />

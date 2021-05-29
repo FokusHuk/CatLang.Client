@@ -63,7 +63,10 @@ namespace Catlang.Client.Pages.MainPages
 
         private void UpdatePage()
         {
-            var recommendedSets = CatLangRestClient.GetAllSets();
+            var recommendedSetsIds = CatLangRestClient.GetRecommendedSets();
+            var recommendedSets = recommendedSetsIds
+                .Select(s => CatLangRestClient.GetSetById(s))
+                .ToList();
             var recommendedSetsModels = new ObservableCollection<SetModel>(recommendedSets.Select(s => new SetModel(s)).ToList());
 
             view = new RecommendationPageView(recommendedSetsModels);
