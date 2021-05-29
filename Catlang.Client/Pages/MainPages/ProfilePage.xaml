@@ -207,5 +207,63 @@
                 </ListView>
             </TabItem>
         </TabControl>
+
+
+        <Grid Grid.Column="4" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0"></ColumnDefinition>
+                    <ColumnDefinition Width="240"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Medium" FontSize="26" Grid.Column="1">Статистика</TextBlock>
+
+                <Button Grid.Column="2" x:Name="UpdateSets" Click="UpdateSets_Click" BorderThickness="0" Background="#FAF8FB" VerticalAlignment="Center" HorizontalAlignment="Right" Height="35" Width="35">
+                    <StackPanel>
+                        <Image Stretch="Uniform" Source="{Binding UpdIconPath}"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" VerticalContentAlignment="Center" FontSize="18" Grid.Row="2" Grid.Column="1">Создано наборов</TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" VerticalContentAlignment="Center" FontSize="18" Grid.Row="3" Grid.Column="1">Средняя сложность</TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" VerticalContentAlignment="Center" FontSize="18" Grid.Row="4" Grid.Column="1">Слов изучено</TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" VerticalContentAlignment="Center" FontSize="18" Grid.Row="5" Grid.Column="1">Наборов использовано</TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" VerticalContentAlignment="Center" FontSize="18" Grid.Row="6" Grid.Column="1">В среднем попыток</TextBox>
+
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Row="2" Grid.Column="2" Text="{Binding Statistics.CreatedSetsCount}"></TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Row="3" Grid.Column="2" Text="{Binding Statistics.AverageComplexity}"></TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Row="4" Grid.Column="2" Text="{Binding Statistics.StudiedWordsCount}"></TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Row="5" Grid.Column="2" Text="{Binding Statistics.UsedSetsCount}"></TextBox>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Row="6" Grid.Column="2" Text="{Binding Statistics.AverageAttemptsCount}"></TextBox>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

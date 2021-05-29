@@ -78,6 +78,7 @@
     <Compile Include="Models\StudiedSetDto.cs" />
     <Compile Include="Models\StudiedWord.cs" />
     <Compile Include="Models\StudiedWordDto.cs" />
+    <Compile Include="Models\UserStatistics.cs" />
     <Compile Include="Models\WordStudyStatus.cs" />
     <Compile Include="Pages\MainPages\ConformityExerciseResult.xaml.cs">
       <DependentUpon>ConformityExerciseResult.xaml</DependentUpon>
