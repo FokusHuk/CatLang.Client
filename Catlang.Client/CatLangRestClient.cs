@@ -209,5 +209,17 @@ namespace Catlang.Client
 
             return content.StudiedWords;
         }
+
+        public static List<CreatedSetDto> GetCreatedSets()
+        {
+            var resource = $"sets/user";
+            var request = new RestRequest(resource, Method.GET);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<GetCreatedSetsResponse>(response.Content);
+
+            return content.CreatedSets;
+        }
     }
 }

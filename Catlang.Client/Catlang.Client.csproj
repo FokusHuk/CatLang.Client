@@ -63,12 +63,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contracts\GetCreatedSetsResponse.cs" />
     <Compile Include="Contracts\GetStudiedSetsResponse.cs" />
     <Compile Include="Contracts\GetStudiedWordsResponse.cs" />
     <Compile Include="Models\ChoiceExercise.cs" />
     <Compile Include="Models\ChoiceExerciseTask.cs" />
     <Compile Include="Models\ConformityExercise.cs" />
     <Compile Include="Models\ConformityExerciseTask.cs" />
+    <Compile Include="Models\CreatedSetDto.cs" />
     <Compile Include="Models\ExerciseFormat.cs" />
     <Compile Include="Models\ExerciseResult.cs" />
     <Compile Include="Models\ExerciseResultWord.cs" />
