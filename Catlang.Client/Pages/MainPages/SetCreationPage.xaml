@@ -44,7 +44,7 @@
 
             <TextBlock Margin="100, 10, 0, 0" VerticalAlignment="Center" FontSize="18" Grid.Row="5">Список слов</TextBlock>
             <Border Grid.Row="6" BorderBrush="Gray" Height="220" Width="515"  BorderThickness="1">
-                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="#FFFAF8" Height="220" Width="515" x:Name="SetWords">
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden" Background="#FFFAF8" Height="210" Width="505" x:Name="SetWords">
                     <ItemsControl ItemsSource="{Binding SetWords}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -67,6 +67,8 @@
                     </ItemsControl>
                 </ScrollViewer>
             </Border>
+
+            <Button x:Name="CreateSet" Click="CreateSet_Click" Background="#F8FBFA" VerticalAlignment="Bottom" Height="50" Width="300" FontSize="18" Grid.Row="7">Создать набор</Button>
         </Grid>
     </Grid>
 </Page>

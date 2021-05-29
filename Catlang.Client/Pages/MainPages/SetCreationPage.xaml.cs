@@ -48,6 +48,11 @@ namespace Catlang.Client.Pages.MainPages
             var word = button.DataContext as Word;
             view.SetWords.Remove(word);
         }
+
+        private void CreateSet_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     public class SetCreationPageView
