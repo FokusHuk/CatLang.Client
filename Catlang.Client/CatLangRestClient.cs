@@ -233,5 +233,32 @@ namespace Catlang.Client
 
             return content.RecommendedSets;
         }
+
+        public static List<Word> GetAllWords()
+        {
+            var resource = $"words/all";
+            var request = new RestRequest(resource, Method.GET);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            var response = client.Execute(request);
+            var content = JsonConvert.DeserializeObject<GetAllWordsResponse>(response.Content);
+
+            return content.Words;
+        }
+
+        public static void CreateSet(string studyTopic, int[] setWordsIds)
+        {
+            var resource = $"sets";
+            var request = new RestRequest(resource, Method.POST);
+            var body = new
+            {
+                StudyTopic = studyTopic,
+                SetWordsIds = setWordsIds
+            };
+            request.AddJsonBody(body);
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            client.Execute(request);
+        }
     }
 }

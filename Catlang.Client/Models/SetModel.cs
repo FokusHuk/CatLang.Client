@@ -5,8 +5,6 @@ namespace Catlang.Client.Models
 {
     public class SetModel
     {
-        private string authorName;
-
         public SetModel(Guid id, string authorName, string studyTopic, string wordsLine, int popularity, double efficiency, double averageStudyTime, double complexity)
         {
             Id = id;

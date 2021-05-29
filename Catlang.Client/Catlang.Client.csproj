@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Contracts\GetAllWordsResponse.cs" />
     <Compile Include="Contracts\GetCreatedSetsResponse.cs" />
     <Compile Include="Contracts\GetRecommendedSetsResponse.cs" />
     <Compile Include="Contracts\GetStudiedSetsResponse.cs" />
@@ -97,6 +98,7 @@
       <DependentUpon>SetCreationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="StaticExerciseStorage.cs" />
+    <Compile Include="StaticWordsStorage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

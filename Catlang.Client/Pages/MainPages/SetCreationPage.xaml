@@ -40,7 +40,7 @@
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="24" Grid.Row="1">Создайте свой уникальный набор</TextBlock>
 
             <TextBlock Margin="150, 20, 0, 0" VerticalAlignment="Center" FontSize="18" Grid.Row="3">Тема изучения (название набора)</TextBlock>
-            <TextBox x:Name="SetName" VerticalContentAlignment="Center" FontSize="20" Width="400" Height="40" Grid.Row="4"></TextBox>
+            <TextBox x:Name="SetName" TextChanged="SetName_TextChanged" VerticalContentAlignment="Center" FontSize="20" Width="400" Height="40" Grid.Row="4"></TextBox>
 
             <TextBlock Margin="100, 10, 0, 0" VerticalAlignment="Center" FontSize="18" Grid.Row="5">Список слов</TextBlock>
             <Border Grid.Row="6" BorderBrush="Gray" Height="220" Width="515"  BorderThickness="1">
