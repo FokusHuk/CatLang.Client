@@ -8,16 +8,13 @@ namespace Catlang.Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static string serverUrl = "http://localhost:5000";
-        public static string token = "";
-
         AuthenticationMain authentication;
         Main mainPage;
 
         public MainWindow()
         {
             InitializeComponent();
-            CatLangRestClient.Initialize(serverUrl);
+            CatLangRestClient.Initialize();
 
             authentication = new AuthenticationMain(() => Authenticate());
         }

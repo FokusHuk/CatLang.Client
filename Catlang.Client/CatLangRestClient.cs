@@ -1,5 +1,6 @@
 ﻿using Catlang.Client.Contracts;
 using Catlang.Client.Models;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -14,10 +15,13 @@ namespace Catlang.Client
         private static RestClient client;
         private static string token;
 
-        public static void Initialize(string serverUrl)
+        public static void Initialize()
         {
-            client = new RestClient(serverUrl);
-            
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("Config/appsettings.json")
+                .Build();
+
+            client = new RestClient(configuration["ServerUrl"]);            
         }
 
         public static bool Authorize(string login, string password)
