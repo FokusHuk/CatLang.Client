@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Catlang.Client.Models
 {
-    public class ChoiceExercise
+    public class ChoiceExerciseDto
     {
-        public ChoiceExercise(Guid id, Guid setId, List<ChoiceExerciseTask> tasks)
+        public ChoiceExerciseDto(Guid id, Guid setId, List<ChoiceExerciseTaskDto> tasks)
         {
             Id = id;
             SetId = setId;
@@ -14,6 +14,6 @@ namespace Catlang.Client.Models
 
         public Guid Id { get; }
         public Guid SetId { get; }
-        public List<ChoiceExerciseTask> Tasks { get; }
+        public List<ChoiceExerciseTaskDto> Tasks { get; }
     }
 }

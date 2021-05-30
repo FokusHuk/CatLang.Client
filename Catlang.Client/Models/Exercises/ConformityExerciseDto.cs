@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Catlang.Client.Models
 {
-    public class ConformityExercise
+    public class ConformityExerciseDto
     {
-        public ConformityExercise(Guid id, Guid setId, List<ConformityExerciseTask> tasks)
+        public ConformityExerciseDto(Guid id, Guid setId, List<ConformityExerciseTaskDto> tasks)
         {
             Id = id;
             SetId = setId;
@@ -14,6 +14,6 @@ namespace Catlang.Client.Models
 
         public Guid Id { get; }
         public Guid SetId { get; }
-        public List<ConformityExerciseTask> Tasks { get; }
+        public List<ConformityExerciseTaskDto> Tasks { get; }
     }
 }

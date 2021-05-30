@@ -1,8 +1,8 @@
 ﻿namespace Catlang.Client.Models
 {
-    public class StudiedSet
+    public class StudiedSetView
     {
-        public StudiedSet(string studyTopic, string authorName, string status, string attemptsCount, string correctAnswers)
+        public StudiedSetView(string studyTopic, string authorName, string status, string attemptsCount, string correctAnswers)
         {
             StudyTopic = studyTopic;
             AuthorName = authorName;

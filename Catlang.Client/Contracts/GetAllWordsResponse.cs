@@ -5,11 +5,11 @@ namespace Catlang.Client.Contracts
 {
     class GetAllWordsResponse
     {
-        public GetAllWordsResponse(List<Word> words)
+        public GetAllWordsResponse(List<WordDto> words)
         {
             Words = words;
         }
 
-        public List<Word> Words { get; set; }
+        public List<WordDto> Words { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Catlang.Client.Pages.MainPages
     public partial class ChoiceExercisePage : Page
     {
         private Action OpenExerciseResultsPage;
-        private ChoiceExercise exercise;
+        private ChoiceExerciseDto exercise;
         private int currentTask;
         private int tasksCount;
 

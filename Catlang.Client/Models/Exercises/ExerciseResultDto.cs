@@ -2,9 +2,9 @@
 
 namespace Catlang.Client.Models
 {
-    public class ExerciseResult
+    public class ExerciseResultDto
     {
-        public ExerciseResult(int correctAnswers, int answersCount, List<ExerciseResultWord> wrongAnswers)
+        public ExerciseResultDto(int correctAnswers, int answersCount, List<ExerciseResultWordDto> wrongAnswers)
         {
             CorrectAnswers = correctAnswers;
             AnswersCount = answersCount;
@@ -13,6 +13,6 @@ namespace Catlang.Client.Models
 
         public int CorrectAnswers { get; set; }
         public int AnswersCount { get; set; }
-        public List<ExerciseResultWord> WrongAnswers { get; set; }
+        public List<ExerciseResultWordDto> WrongAnswers { get; set; }
     }
 }

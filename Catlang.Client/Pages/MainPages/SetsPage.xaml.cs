@@ -53,28 +53,28 @@ namespace Catlang.Client.Pages.MainPages
         {
             if (SortType.SelectedIndex == 0)
             {
-                view.Sets = new ObservableCollection<SetModel>(
+                view.Sets = new ObservableCollection<SetView>(
                     view.Sets.OrderByDescending(s => s.Efficiency));
                 view = new SetsPageView(view);
                 DataContext = view;
             }
             if (SortType.SelectedIndex == 1)
             {
-                view.Sets = new ObservableCollection<SetModel>(
+                view.Sets = new ObservableCollection<SetView>(
                     view.Sets.OrderByDescending(s => s.Popularity));
                 view = new SetsPageView(view);
                 DataContext = view;
             }
             if (SortType.SelectedIndex == 2)
             {
-                view.Sets = new ObservableCollection<SetModel>(
+                view.Sets = new ObservableCollection<SetView>(
                     view.Sets.OrderByDescending(s => s.Complexity));
                 view = new SetsPageView(view);
                 DataContext = view;
             }
             if (SortType.SelectedIndex == 3)
             {
-                view.Sets = new ObservableCollection<SetModel>(
+                view.Sets = new ObservableCollection<SetView>(
                     view.Sets.OrderByDescending(s => s.AverageStudyTime));
                 view = new SetsPageView(view);
                 DataContext = view;
@@ -96,7 +96,7 @@ namespace Catlang.Client.Pages.MainPages
         private void UpdatePage()
         {
             var sets = CatLangRestClient.GetAllSets();
-            var setModels = new ObservableCollection<SetModel>(sets.Select(s => new SetModel(s)).ToList());
+            var setModels = new ObservableCollection<SetView>(sets.Select(s => new SetView(s)).ToList());
 
             view = new SetsPageView(setModels);
             DataContext = view;
@@ -113,10 +113,10 @@ namespace Catlang.Client.Pages.MainPages
     public class SetsPageView
     {
         public string UpdIconPath { get; set; }
-        public SetModel SelectedItem { get; set; }
-        public ObservableCollection<SetModel> Sets { get; set; }
+        public SetView SelectedItem { get; set; }
+        public ObservableCollection<SetView> Sets { get; set; }
 
-        public SetsPageView(ObservableCollection<SetModel> sets)
+        public SetsPageView(ObservableCollection<SetView> sets)
         {
             UpdIconPath = Path.GetFullPath("Resources/update_icon.png");
             Sets = sets;

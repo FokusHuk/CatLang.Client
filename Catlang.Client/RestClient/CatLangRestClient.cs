@@ -64,7 +64,7 @@ namespace Catlang.Client
             return response.StatusCode == System.Net.HttpStatusCode.OK;
         }
 
-        public static List<Set> GetAllSets()
+        public static List<SetDto> GetAllSets()
         {
             var resource = $"sets";
             var request = new RestRequest(resource, Method.GET);
@@ -76,7 +76,7 @@ namespace Catlang.Client
             return content.Sets;
         }
 
-        public static ConformityExercise StartConformityExercise(ExerciseFormat exerciseFormat, Guid setId)
+        public static ConformityExerciseDto StartConformityExercise(ExerciseFormat exerciseFormat, Guid setId)
         {
             var resource = $"exercises/create/conformity";
             var request = new RestRequest(resource, Method.POST);
@@ -89,7 +89,7 @@ namespace Catlang.Client
             request.AddHeader("Authorization", "Bearer " + token);
 
             var response = client.Execute(request);
-            var content = JsonConvert.DeserializeObject<ConformityExercise>(response.Content);
+            var content = JsonConvert.DeserializeObject<ConformityExerciseDto>(response.Content);
 
             return content;
         }
@@ -119,7 +119,7 @@ namespace Catlang.Client
             client.Execute(request);
         }
 
-        public static ChoiceExercise StartChoiceExercise(ExerciseFormat exerciseFormat, Guid setId)
+        public static ChoiceExerciseDto StartChoiceExercise(ExerciseFormat exerciseFormat, Guid setId)
         {
             var resource = $"exercises/create/choice";
             var request = new RestRequest(resource, Method.POST);
@@ -132,7 +132,7 @@ namespace Catlang.Client
             request.AddHeader("Authorization", "Bearer " + token);
 
             var response = client.Execute(request);
-            var content = JsonConvert.DeserializeObject<ChoiceExercise>(response.Content);
+            var content = JsonConvert.DeserializeObject<ChoiceExerciseDto>(response.Content);
 
             return content;
         }
@@ -160,7 +160,7 @@ namespace Catlang.Client
             client.Execute(request);
         }
 
-        public static ExerciseResult FinishExercise(Guid exerciseId, ExerciseFormat exerciseFormat)
+        public static ExerciseResultDto FinishExercise(Guid exerciseId, ExerciseFormat exerciseFormat)
         {
             var resource = $"exercises/finish";
             var request = new RestRequest(resource, Method.POST);
@@ -173,7 +173,7 @@ namespace Catlang.Client
             request.AddHeader("Authorization", "Bearer " + token);
 
             var response = client.Execute(request);
-            var content = JsonConvert.DeserializeObject<ExerciseResult>(response.Content);
+            var content = JsonConvert.DeserializeObject<ExerciseResultDto>(response.Content);
 
             return content;
         }
@@ -190,14 +190,14 @@ namespace Catlang.Client
             return content.StudiedSets;
         }
 
-        public static Set GetSetById(Guid setId)
+        public static SetDto GetSetById(Guid setId)
         {
             var resource = $"sets/{setId}";
             var request = new RestRequest(resource, Method.GET);
             request.AddHeader("Authorization", "Bearer " + token);
 
             var response = client.Execute(request);
-            var content = JsonConvert.DeserializeObject<Set>(response.Content);
+            var content = JsonConvert.DeserializeObject<SetDto>(response.Content);
 
             return content;
         }
@@ -238,7 +238,7 @@ namespace Catlang.Client
             return content.RecommendedSets;
         }
 
-        public static List<Word> GetAllWords()
+        public static List<WordDto> GetAllWords()
         {
             var resource = $"words/all";
             var request = new RestRequest(resource, Method.GET);

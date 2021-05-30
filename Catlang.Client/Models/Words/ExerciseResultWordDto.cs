@@ -1,8 +1,8 @@
 ﻿namespace Catlang.Client.Models
 {
-    public class ExerciseResultWord
+    public class ExerciseResultWordDto
     {
-        public ExerciseResultWord(string taskWord, string chosenAnswer, string correctAnswer)
+        public ExerciseResultWordDto(string taskWord, string chosenAnswer, string correctAnswer)
         {
             TaskWord = taskWord;
             ChosenAnswer = chosenAnswer;

@@ -1,8 +1,8 @@
 ﻿namespace Catlang.Client.Models
 {
-    public class Word
+    public class WordDto
     {
-        public Word(int id, string original, string translation)
+        public WordDto(int id, string original, string translation)
         {
             Id = id;
             Original = original;

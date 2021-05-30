@@ -1,16 +1,16 @@
 ﻿namespace Catlang.Client.Models
 {
-    public class ConformityExerciseTask
+    public class ChoiceExerciseTaskDto
     {
-        public ConformityExerciseTask(int taskWordId, string taskWord, string answerWord)
+        public ChoiceExerciseTaskDto(int taskWordId, string taskWord, string[] answerWords)
         {
             TaskWordId = taskWordId;
             TaskWord = taskWord;
-            AnswerWord = answerWord;
+            AnswerWords = answerWords;
         }
 
         public int TaskWordId { get; }
         public string TaskWord { get; }
-        public string AnswerWord { get; }
+        public string[] AnswerWords { get; }
     }
 }

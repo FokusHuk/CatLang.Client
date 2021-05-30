@@ -12,7 +12,7 @@ namespace Catlang.Client.Pages.MainPages
     public partial class ConformityExercisePage : Page
     {
         private Action OpenExerciseResultsPage;
-        private ConformityExercise exercise;
+        private ConformityExerciseDto exercise;
         private int currentTask;
         private int tasksCount;
 

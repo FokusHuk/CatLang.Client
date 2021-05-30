@@ -146,20 +146,20 @@
     <Compile Include="Contracts\GetRecommendedSetsResponse.cs" />
     <Compile Include="Contracts\GetStudiedSetsResponse.cs" />
     <Compile Include="Contracts\GetStudiedWordsResponse.cs" />
-    <Compile Include="Models\ChoiceExercise.cs" />
-    <Compile Include="Models\ChoiceExerciseTask.cs" />
-    <Compile Include="Models\ConformityExercise.cs" />
-    <Compile Include="Models\ConformityExerciseTask.cs" />
-    <Compile Include="Models\CreatedSetDto.cs" />
-    <Compile Include="Models\ExerciseFormat.cs" />
-    <Compile Include="Models\ExerciseResult.cs" />
-    <Compile Include="Models\ExerciseResultWord.cs" />
-    <Compile Include="Models\StudiedSet.cs" />
-    <Compile Include="Models\StudiedSetDto.cs" />
-    <Compile Include="Models\StudiedWord.cs" />
-    <Compile Include="Models\StudiedWordDto.cs" />
-    <Compile Include="Models\UserStatistics.cs" />
-    <Compile Include="Models\WordStudyStatus.cs" />
+    <Compile Include="Models\Exercises\ChoiceExerciseDto.cs" />
+    <Compile Include="Models\Exercises\ChoiceExerciseTaskDto.cs" />
+    <Compile Include="Models\Exercises\ConformityExerciseDto.cs" />
+    <Compile Include="Models\Exercises\ConformityExerciseTaskDto.cs" />
+    <Compile Include="Models\Sets\CreatedSetDto.cs" />
+    <Compile Include="Models\Exercises\ExerciseFormat.cs" />
+    <Compile Include="Models\Exercises\ExerciseResultDto.cs" />
+    <Compile Include="Models\Words\ExerciseResultWordDto.cs" />
+    <Compile Include="Models\Sets\StudiedSetView.cs" />
+    <Compile Include="Models\Sets\StudiedSetDto.cs" />
+    <Compile Include="Models\Words\StudiedWordView.cs" />
+    <Compile Include="Models\Words\StudiedWordDto.cs" />
+    <Compile Include="Models\Statistics\UserStatisticsView.cs" />
+    <Compile Include="Models\Words\WordStudyStatus.cs" />
     <Compile Include="Pages\Exercises\ConformityExerciseResult.xaml.cs">
       <DependentUpon>ConformityExerciseResult.xaml</DependentUpon>
     </Compile>
@@ -250,9 +250,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Set.cs" />
-    <Compile Include="Models\SetModel.cs" />
-    <Compile Include="Models\Word.cs" />
+    <Compile Include="Models\Sets\SetDto.cs" />
+    <Compile Include="Models\Sets\SetView.cs" />
+    <Compile Include="Models\Words\WordDto.cs" />
     <Compile Include="Pages\Authentication\AuthenticationMain.xaml.cs">
       <DependentUpon>AuthenticationMain.xaml</DependentUpon>
     </Compile>

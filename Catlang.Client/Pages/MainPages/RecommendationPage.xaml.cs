@@ -68,7 +68,7 @@ namespace Catlang.Client.Pages.MainPages
             var recommendedSets = recommendedSetsIds
                 .Select(s => CatLangRestClient.GetSetById(s))
                 .ToList();
-            var recommendedSetsModels = new ObservableCollection<SetModel>(recommendedSets.Select(s => new SetModel(s)).ToList());
+            var recommendedSetsModels = new ObservableCollection<SetView>(recommendedSets.Select(s => new SetView(s)).ToList());
 
             view = new RecommendationPageView(recommendedSetsModels);
             DataContext = view;
@@ -85,10 +85,10 @@ namespace Catlang.Client.Pages.MainPages
     public class RecommendationPageView
     {
         public string UpdIconPath { get; set; }
-        public SetModel SelectedItem { get; set; }
-        public ObservableCollection<SetModel> RecommendedSets { get; set; }
+        public SetView SelectedItem { get; set; }
+        public ObservableCollection<SetView> RecommendedSets { get; set; }
 
-        public RecommendationPageView(ObservableCollection<SetModel> recommendedSets)
+        public RecommendationPageView(ObservableCollection<SetView> recommendedSets)
         {
             UpdIconPath = Path.GetFullPath("Resources/update_icon.png");
             RecommendedSets = recommendedSets;

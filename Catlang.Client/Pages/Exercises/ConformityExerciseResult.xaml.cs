@@ -39,7 +39,7 @@ namespace Catlang.Client.Pages
             }
         }
 
-        private List<ConformityExerciseResultWord> GetConformityExerciseResultWords(List<ExerciseResultWord> words)
+        private List<ConformityExerciseResultWord> GetConformityExerciseResultWords(List<ExerciseResultWordDto> words)
         {
             return words.Select(w => new ConformityExerciseResultWord(
                 w.TaskWord,

@@ -5,11 +5,11 @@ namespace Catlang.Client.Contracts
 {
     class GetAllSetsResponse
     {
-        public GetAllSetsResponse(List<Set> sets)
+        public GetAllSetsResponse(List<SetDto> sets)
         {
             Sets = sets;
         }
 
-        public List<Set> Sets { get; set; }
+        public List<SetDto> Sets { get; set; }
     }
 }

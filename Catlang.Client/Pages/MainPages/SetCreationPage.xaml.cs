@@ -32,8 +32,8 @@ namespace Catlang.Client.Pages.MainPages
             }
 
             view = new SetCreationPageView(
-                new ObservableCollection<Word>(),
-                new ObservableCollection<Word>());
+                new ObservableCollection<WordDto>(),
+                new ObservableCollection<WordDto>());
             DataContext = view;
 
             SearchField.Text = SEARCH_FIELD_EMPTY_MESSAGE;
@@ -43,14 +43,14 @@ namespace Catlang.Client.Pages.MainPages
         private void RemoveWord_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var word = button.DataContext as Word;
+            var word = button.DataContext as WordDto;
             view.SetWords.Remove(word);
         }
 
         private void InsertWord_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var word = button.DataContext as Word;
+            var word = button.DataContext as WordDto;
             if (!view.SetWords.Contains(word) && view.SetWords.Count < 20)
                 view.SetWords.Insert(0, word);
         }
@@ -113,7 +113,7 @@ namespace Catlang.Client.Pages.MainPages
 
                 var length = SearchField.Text.Length;
 
-                var filteredWords = new List<Word>();
+                var filteredWords = new List<WordDto>();
 
                 if (EnAlphabet.Contains(SearchField.Text[0]))
                     filteredWords = StaticWordsStorage.Words
@@ -171,11 +171,11 @@ namespace Catlang.Client.Pages.MainPages
 
     public class SetCreationPageView
     {
-        public Word SelectedItem { get; set; }
-        public ObservableCollection<Word> SetWords { get; set; }
-        public ObservableCollection<Word> Words { get; set; }
+        public WordDto SelectedItem { get; set; }
+        public ObservableCollection<WordDto> SetWords { get; set; }
+        public ObservableCollection<WordDto> Words { get; set; }
 
-        public SetCreationPageView(ObservableCollection<Word> setWords, ObservableCollection<Word> words)
+        public SetCreationPageView(ObservableCollection<WordDto> setWords, ObservableCollection<WordDto> words)
         {
             SetWords = setWords;
             Words = words;

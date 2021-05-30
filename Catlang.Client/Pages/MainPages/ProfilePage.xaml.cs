@@ -14,7 +14,7 @@ namespace Catlang.Client.Pages.MainPages
     public partial class ProfilePage : Page
     {
         ProfilePageView view;
-        List<StudiedWord> studiedWords;
+        List<StudiedWordView> studiedWords;
 
         public ProfilePage()
         {
@@ -90,7 +90,7 @@ namespace Catlang.Client.Pages.MainPages
             view = new ProfilePageView(
                 view.Statistics,
                 view.UsedSets,
-                new ObservableCollection<StudiedWord>(filteredStudiedWords),
+                new ObservableCollection<StudiedWordView>(filteredStudiedWords),
                 view.CreatedSets);
             DataContext = view;
         }
@@ -106,9 +106,9 @@ namespace Catlang.Client.Pages.MainPages
             var studiedsSetsInfo = studiedSetDtos
                 .Select(s => CatLangRestClient.GetSetById(s.SetId))
                 .ToList();
-            var studiedSets = new ObservableCollection<StudiedSet>(
+            var studiedSets = new ObservableCollection<StudiedSetView>(
                 studiedSetDtos
-                    .Select(s => new StudiedSet(
+                    .Select(s => new StudiedSetView(
                         studiedsSetsInfo.Single(i => i.Id == s.SetId).StudyTopic,
                         studiedsSetsInfo.Single(i => i.Id == s.SetId).AuthorName,
                         s.IsStudied ? "Изучено" : "Не изучено",
@@ -120,7 +120,7 @@ namespace Catlang.Client.Pages.MainPages
 
             studiedWords = studiedWordsDtos
                     .Select(w =>
-                        new StudiedWord(
+                        new StudiedWordView(
                             w.Word,
                             w.RiskFactor + "%",
                             w.CorrectAnswers,
@@ -130,12 +130,12 @@ namespace Catlang.Client.Pages.MainPages
                     .OrderBy(w => w.Word.Original)
                     .ToList();
 
-            var viewStudiedWords = new ObservableCollection<StudiedWord>(studiedWords);
+            var viewStudiedWords = new ObservableCollection<StudiedWordView>(studiedWords);
 
             var createdSets = CatLangRestClient.GetCreatedSets();
             var createdSetsView = new ObservableCollection<CreatedSetDto>(createdSets);
 
-            var statistics = new UserStatistics(
+            var statistics = new UserStatisticsView(
                 createdSets.Count,
                 Math.Round(studiedsSetsInfo.Sum(s => s.Complexity) / studiedsSetsInfo.Count, 2),
                 studiedWords.Count,
@@ -152,15 +152,15 @@ namespace Catlang.Client.Pages.MainPages
     public class ProfilePageView
     {
         public string UpdIconPath { get; set; }
-        public UserStatistics Statistics { get; set; }
-        public ObservableCollection<StudiedSet> UsedSets { get; set; }
-        public ObservableCollection<StudiedWord> StudiedWords { get; set; }
+        public UserStatisticsView Statistics { get; set; }
+        public ObservableCollection<StudiedSetView> UsedSets { get; set; }
+        public ObservableCollection<StudiedWordView> StudiedWords { get; set; }
         public ObservableCollection<CreatedSetDto> CreatedSets { get; set; }
 
         public ProfilePageView(
-            UserStatistics userStatistics,
-            ObservableCollection<StudiedSet> usedSets,
-            ObservableCollection<StudiedWord> studiedWords,
+            UserStatisticsView userStatistics,
+            ObservableCollection<StudiedSetView> usedSets,
+            ObservableCollection<StudiedWordView> studiedWords,
             ObservableCollection<CreatedSetDto> createdSets)
         {
             Statistics = userStatistics;

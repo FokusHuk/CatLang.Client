@@ -2,10 +2,10 @@
 
 namespace Catlang.Client.Models
 {
-    public class StudiedWord
+    public class StudiedWordView
     {
-        public StudiedWord(
-            Word word,
+        public StudiedWordView(
+            WordDto word,
             string riskFactor,
             int correctAnswers,
             int incorrectAnswers,
@@ -20,7 +20,7 @@ namespace Catlang.Client.Models
             Status = status;
         }
 
-        public Word Word { get; }
+        public WordDto Word { get; }
 		public string RiskFactor { get; set; }
 		public int CorrectAnswers { get; set; }
 		public int IncorrectAnswers { get; set; }

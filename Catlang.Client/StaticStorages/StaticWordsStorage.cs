@@ -5,7 +5,7 @@ namespace Catlang.Client.StaticStorages
 {
     public static class StaticWordsStorage
     {
-        public static List<Word> Words { get; set; }
+        public static List<WordDto> Words { get; set; }
 
         public static bool DoesWordsLoaded = false;
     }

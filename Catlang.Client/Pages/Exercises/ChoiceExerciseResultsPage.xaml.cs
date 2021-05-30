@@ -30,7 +30,7 @@ namespace Catlang.Client.Pages.MainPages
             }
             else
             {
-                var mistakes = new ObservableCollection<ExerciseResultWord>(exerciseResult.WrongAnswers);
+                var mistakes = new ObservableCollection<ExerciseResultWordDto>(exerciseResult.WrongAnswers);
                 view = new ExerciseResultsPageView(mistakes);
                 DataContext = view;
             }
@@ -38,9 +38,9 @@ namespace Catlang.Client.Pages.MainPages
     }
     public class ExerciseResultsPageView
     {
-        public ObservableCollection<ExerciseResultWord> Mistakes { get; set; }
+        public ObservableCollection<ExerciseResultWordDto> Mistakes { get; set; }
 
-        public ExerciseResultsPageView(ObservableCollection<ExerciseResultWord> mistakes)
+        public ExerciseResultsPageView(ObservableCollection<ExerciseResultWordDto> mistakes)
         {
             Mistakes = mistakes;
         }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Catlang.Client.Models
 {
-    public class Set
+    public class SetDto
     {
-        public Set(Guid id, string authorName, string studyTopic, List<Word> words, int popularity, double efficiency, double averageStudyTime, double complexity)
+        public SetDto(Guid id, string authorName, string studyTopic, List<WordDto> words, int popularity, double efficiency, double averageStudyTime, double complexity)
         {
             Id = id;
             AuthorName = authorName;
@@ -20,7 +20,7 @@ namespace Catlang.Client.Models
         public Guid Id { get; set; }
         public string AuthorName { get; set; }
         public string StudyTopic { get; set; }
-        public List<Word> Words { get; set; }
+        public List<WordDto> Words { get; set; }
         public int Popularity { get; set; }
         public double Efficiency { get; set; }
         public double AverageStudyTime { get; set; }

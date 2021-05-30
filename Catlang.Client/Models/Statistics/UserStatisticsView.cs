@@ -1,8 +1,8 @@
 ﻿namespace Catlang.Client.Models
 {
-    public class UserStatistics
+    public class UserStatisticsView
     {
-        public UserStatistics(int createdSetsCount, double averageComplexity, int studiedWordsCount, int usedSetsCount, double averageAttemptsCount)
+        public UserStatisticsView(int createdSetsCount, double averageComplexity, int studiedWordsCount, int usedSetsCount, double averageAttemptsCount)
         {
             CreatedSetsCount = createdSetsCount;
             AverageComplexity = averageComplexity;
