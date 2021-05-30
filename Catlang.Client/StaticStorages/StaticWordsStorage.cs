@@ -1,7 +1,7 @@
 ﻿using Catlang.Client.Models;
 using System.Collections.Generic;
 
-namespace Catlang.Client
+namespace Catlang.Client.StaticStorages
 {
     public static class StaticWordsStorage
     {

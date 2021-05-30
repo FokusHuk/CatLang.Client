@@ -1,4 +1,5 @@
 ﻿using Catlang.Client.Models;
+using Catlang.Client.StaticStorages;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;

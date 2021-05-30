@@ -1,4 +1,5 @@
 ﻿using Catlang.Client.Models;
+using Catlang.Client.StaticStorages;
 using System;
 using System.Windows;
 using System.Windows.Controls;

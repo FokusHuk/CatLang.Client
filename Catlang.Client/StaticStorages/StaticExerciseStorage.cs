@@ -1,14 +1,13 @@
 ﻿using Catlang.Client.Models;
 using System;
-using System.Collections.Generic;
 
-namespace Catlang.Client
+namespace Catlang.Client.StaticStorages
 {
     public static class StaticExerciseStorage
     {
         public static Guid ExerciseId { get; set; }
         public static Guid SetId { get; set; }
         public static string SetName { get; set; }
-        public static ExerciseFormat ExerciseFormat { get;set; }
+        public static ExerciseFormat ExerciseFormat { get; set; }
     }
 }

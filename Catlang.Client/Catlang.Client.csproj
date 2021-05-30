@@ -175,8 +175,8 @@
     <Compile Include="Pages\MainPages\SetCreationPage.xaml.cs">
       <DependentUpon>SetCreationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StaticExerciseStorage.cs" />
-    <Compile Include="StaticWordsStorage.cs" />
+    <Compile Include="StaticStorages\StaticExerciseStorage.cs" />
+    <Compile Include="StaticStorages\StaticWordsStorage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
