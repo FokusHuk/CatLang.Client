@@ -6,7 +6,7 @@ namespace Catlang.Client.Pages
     /// <summary>
     /// Логика взаимодействия для Main.xaml
     /// </summary>
-    public partial class Main : Page
+    public partial class MainPage : Page
     {
         ApplicationBar applicationBar;
         SetsPage setsPage;
@@ -14,7 +14,7 @@ namespace Catlang.Client.Pages
         ProfilePage profilePage;
         ExerciseCreationPage exerciseCreationPage;
 
-        public Main()
+        public MainPage()
         {
             InitializeComponent();
 

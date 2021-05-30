@@ -9,7 +9,7 @@ namespace Catlang.Client
     public partial class MainWindow : Window
     {
         AuthenticationMain authentication;
-        Main mainPage;
+        MainPage mainPage;
 
         public MainWindow()
         {
@@ -21,7 +21,7 @@ namespace Catlang.Client
 
         public void Authenticate()
         {
-            mainPage = new Main();
+            mainPage = new MainPage();
             state.Content = mainPage;
         }
 

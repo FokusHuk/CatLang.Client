@@ -228,7 +228,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\MainPages\Main.xaml">
+    <Page Include="Pages\MainPages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -268,8 +268,8 @@
     <Compile Include="Pages\Exercises\ExerciseCreationPage.xaml.cs">
       <DependentUpon>ExerciseCreationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MainPages\Main.xaml.cs">
-      <DependentUpon>Main.xaml</DependentUpon>
+    <Compile Include="Pages\MainPages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPages\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
