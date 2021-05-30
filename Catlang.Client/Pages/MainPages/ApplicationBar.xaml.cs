@@ -11,14 +11,16 @@ namespace Catlang.Client.Pages.MainPages
         private Action OpenSetsPage;
         private Action OpenRecommendationPage;
         private Action OpenProfilePage;
+        private Action OpenAuthenticationPage;
 
-        public ApplicationBar(Action openSetsPage, Action openRecommendationPage, Action openProfilePage)
+        public ApplicationBar(Action openSetsPage, Action openRecommendationPage, Action openProfilePage, Action openAuthenticationPage)
         {
             InitializeComponent();
 
             OpenSetsPage = openSetsPage;
             OpenRecommendationPage = openRecommendationPage;
             OpenProfilePage = openProfilePage;
+            OpenAuthenticationPage = openAuthenticationPage;
 
             Username.Text = CatLangRestClient.Username;
         }
@@ -36,6 +38,11 @@ namespace Catlang.Client.Pages.MainPages
         private void Profile_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             OpenProfilePage();
+        }
+
+        private void Exit_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            OpenAuthenticationPage();
         }
     }
 }

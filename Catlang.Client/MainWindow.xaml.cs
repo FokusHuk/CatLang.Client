@@ -21,11 +21,16 @@ namespace Catlang.Client
 
         public void Authenticate()
         {
-            mainPage = new MainPage();
+            mainPage = new MainPage(() => LogOut());
             state.Content = mainPage;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            state.Content = authentication;
+        }
+
+        public void LogOut()
         {
             state.Content = authentication;
         }

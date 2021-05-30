@@ -135,12 +135,15 @@ namespace Catlang.Client.Pages.MainPages
             var createdSets = CatLangRestClient.GetCreatedSets();
             var createdSetsView = new ObservableCollection<CreatedSetDto>(createdSets);
 
+            var averageComplexity = studiedsSetsInfo.Count == 0 ? 0 : Math.Round(studiedsSetsInfo.Sum(s => s.Complexity) / studiedsSetsInfo.Count, 2);
+            var averageAttemptsCount = studiedSetDtos.Count == 0 ? 0 : Math.Round((double)studiedSetDtos.Sum(s => s.AttemptsCount) / studiedSetDtos.Count, 2);
+
             var statistics = new UserStatisticsView(
                 createdSets.Count,
-                Math.Round(studiedsSetsInfo.Sum(s => s.Complexity) / studiedsSetsInfo.Count, 2),
+                averageComplexity,
                 studiedWords.Count,
                 studiedSets.Count,
-                Math.Round((double)studiedSetDtos.Sum(s => s.AttemptsCount) / studiedSetDtos.Count, 2));
+                averageAttemptsCount);
 
             view = new ProfilePageView(statistics, studiedSets, viewStudiedWords, createdSetsView);
             DataContext = view;

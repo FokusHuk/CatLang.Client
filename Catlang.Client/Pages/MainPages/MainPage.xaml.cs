@@ -1,4 +1,5 @@
 ﻿using Catlang.Client.Pages.MainPages;
+using System;
 using System.Windows.Controls;
 
 namespace Catlang.Client.Pages
@@ -13,12 +14,15 @@ namespace Catlang.Client.Pages
         RecommendationPage recommendationPage;
         ProfilePage profilePage;
         ExerciseCreationPage exerciseCreationPage;
+        private Action LogOut;
 
-        public MainPage()
+        public MainPage(Action logOut)
         {
             InitializeComponent();
 
-            applicationBar = new ApplicationBar(() => OpenSetsPage(), () => OpenRecommendationPage(), () => OpenProfilePage());
+            LogOut = logOut;
+
+            applicationBar = new ApplicationBar(() => OpenSetsPage(), () => OpenRecommendationPage(), () => OpenProfilePage(), () => OpenAuthenticationPage());
             setsPage = new SetsPage(() => OpenExerciseCreationPage(), () => OpenSetCreationPage());
             recommendationPage = new RecommendationPage(() => OpenExerciseCreationPage());
             profilePage = new ProfilePage();
@@ -71,6 +75,11 @@ namespace Catlang.Client.Pages
         private void OpenSetCreationPage()
         {
             body.Content = new SetCreationPage();
+        }
+
+        private void OpenAuthenticationPage()
+        {
+            LogOut();
         }
     }
 }
